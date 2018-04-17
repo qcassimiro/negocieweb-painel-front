@@ -28,18 +28,19 @@
     <!-- [+] container -->
     <div id="container">
         <!-- [+] navbar -->
-        <nav th:fragment="navbar" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav th:fragment="navbar" class="navbar navbar-default navbar-static-top navbarcustom" role="navigation" style="margin-bottom: 0">
             <!-- [+] navbar-header -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" th:href="@{/index}">TE ERRE SEDE GITAL</a>
+                	<a class="navbar-brand" th:href="@{/index}"> <img src="img/negocieweb3.png"
+					alt="logo" title="Logo" /></a>
             </div>
             <!-- [-] navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-envelope fa-fw orange"></i> <i class="fa fa-caret-down orange"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
@@ -80,14 +81,14 @@
                         <li class="divider"></li>
                         <li>
                             <a class="text-center" href="#"> <strong>Read
-                                All Messages</strong> <i class="fa fa-angle-right"></i>
+                                All Messages</strong> <i class="fa fa-angle-right orange"></i>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-tasks fa-fw"></i>
-                        <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-tasks fa-fw orange"></i>
+                        <i class="fa fa-caret-down orange"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-tasks">
                         <li>
@@ -162,8 +163,8 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw"></i>
-                        <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw orange"></i>
+                        <i class="fa fa-caret-down orange"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
@@ -214,8 +215,8 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-                        <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw orange"></i>
+                        <i class="fa fa-caret-down orange"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User

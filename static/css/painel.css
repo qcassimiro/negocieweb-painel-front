@@ -497,3 +497,9 @@
      text-align: center;
      border-radius: 0px 0px 25px 25px;
 }
+
+.navbarcustom{
+	background: white;
+	box-shadow: 0px 1px 6px 0px rgba(68,68,68,0.1)
+	
+}

@@ -233,13 +233,15 @@
                 </li>
             </ul>
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li><a th:href="@{/}"><i class="fa fa-home fa-fw"></i>Início</a></li>
-                        <li><a th:href="@{/acoes}"><i class="fa fa-folder fa-fw"></i>Ações</a>
-                        </li>
-                        <li><a th:href="@{/calendario}"><i class="fa fa-calendar fa-fw"></i>Calendário</a>
-                        </li>
+                <div class="sidebar-nav navbar-collapse sidebarcustom">
+                    <ul class="nav" id="side-menu" style="text-align: center;">
+                    
+						<li><a th:href="@{/}" class="purple"><i
+								class="fa fa-home fa-fw fa-2x purple"></i> Início</a></li>
+						<li><a th:href="@{/acoes}" class="purple"><i
+								class="fa fa-folder fa-fw fa-2x purple"></i> Ações</a></li>
+						<li><a th:href="@{/calendario}" class="purple"><i
+								class="fa fa-calendar fa-fw fa-2x purple"></i> Calendário</a></li>
                         <!--
                                 <li>
                                     <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>

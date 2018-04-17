@@ -104,7 +104,7 @@
      .sidebar {
          z-index: 1;
          position: absolute;
-         width: 250px;
+         width: 100px;
          margin-top: 51px;
     }
      .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
@@ -497,11 +497,21 @@
      text-align: center;
      border-radius: 0px 0px 25px 25px;
 }
-
+.orange{
+	color: #F19748 !important;
+}
+.purple{	
+	color: #512DA8 !important;
+}
 .navbarcustom{
 	background: white;
 	box-shadow: 0px 1px 6px 0px rgba(68,68,68,0.1)	
 }
-.orange{
-	color: #F19748 !important;
+.sidebarcustom{
+	width: 100px !important;
+	height: 100%;
+	left: 0px;
+}
+.marginleft {
+	margin-left: 100px !important;
 }

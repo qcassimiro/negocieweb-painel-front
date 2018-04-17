@@ -1,1 +1,1 @@
-# negocieweb-painel-front
+# resources for negocieweb-painel

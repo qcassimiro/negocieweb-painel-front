@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="comum :: head (title='Ações')">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Andre Cassimiro" />
+</head>
+
+<body>
+    <!-- [+] container -->
+    <div id="container">
+        <!-- [+] navbar -->
+        <nav th:replace="comum :: navbar" />
+        <!-- [-] navbar -->
+        <!-- [+] page-wrapper -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header" th:text="'Bem vindo, ' + ${#httpServletRequest.remoteUser} + '!'"><i class="fa fa-dashboard"></i> Blank</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i>&nbsp;&nbsp;<a th:href="@{/}">Início</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="img/trcdigital.jpg" alt="modernao" height="512" width="512" />
+                </div>
+            </div>
+        </div>
+        <!-- [-] page-wrapper -->
+    </div>
+    <!-- [-] container -->
+    <script th:replace="comum :: jqueryjs" />
+    <script th:replace="comum :: jqueryuijs" />
+    <script th:replace="comum :: momentjs" />
+    <script th:replace="comum :: fullcalendarjs" />
+    <script th:replace="comum :: fullcalendarlangjs" />
+    <script th:replace="comum :: bootstrapjs" />
+    <script th:replace="comum :: metisjs" />
+    <script th:replace="comum :: morrisjs" />
+    <script th:replace="comum :: raphaeljs" />
+    <script th:replace="comum :: customjs" />
+</body>
+
+</html>

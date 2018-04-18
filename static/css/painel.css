@@ -533,3 +533,7 @@
 #myBtn:hover {
 	background-color: #555;
 }
+#chartdiv {
+	widht: 100%;
+	height: 400px;
+}

@@ -83,34 +83,56 @@
                             <div class="panel-heading heading-font rounded-heading text-center">
                                 Resultados
                             </div>
-                            <div class="panel-body">
-                                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Número de Acessos</th>
-                                            <th>numVisualProp</th>
-                                            <th>numAceiteProp</th>
-                                            <th>Número de Boletos Gerados</th>
-                                            <th>Número de Pagamentos</th>
-                                            <th>Número de Contrapropostas</th>
-                                            <th>Número de AtCadastros</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAcessos, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numVisualProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAceiteProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numBoletosGerados, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numPagamentos, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numContraProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAtCadastro, 0, 'POINT')}"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                           <div class="panel-body">
+								<div class="col-sm-6">
+									<table width="100%"
+										class="table table-striped table-bordered table-hover"
+										id="dataTables-example" style="font-size: 1em;">
+										<tbody>
+											<tr> <!--th:each="resultado : ${resultados}" -->
+											<td> <strong>Número de Acessos</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numAcessos, 0, 'POINT')}"></td>
+													</tr>
+													<tr>
+													<td><strong>Número de Propostas Visuais</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numVisualProp, 0, 'POINT')}"></td>
+													</tr>
+													<tr>
+													<td><strong> Número de Propostas Aceitas</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numAceiteProp, 0, 'POINT')}"></td>
+													</tr>
+													<tr>
+													<td><strong>Número de Boletos Gerados</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numBoletosGerados, 0, 'POINT')}"></td>
+													</tr>
+													<tr>
+													<td><strong>Número de Pagamentos</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numPagamentos, 0, 'POINT')}"></td>
+													</tr>
+													<tr>
+													<td><strong>Número de Contra Propostas</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numContraProp, 0, 'POINT')}"></td>
+													</tr>
+													<tr>
+													<td><strong>Número de Cadastros</strong></td>
+												<td class="text-right"
+													th:text="${#numbers.formatInteger(resultado.numAtCadastro, 0, 'POINT')}"></td>
+													</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-sm-6">
+									<div id="chartdiv"></div>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -193,7 +215,68 @@
         </div>
         <!-- [-] page-wrapper -->
     </div>
+    <!-- amCharts -->
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="https://www.amcharts.com/lib/3/funnel.js"></script>
     <!-- [-] container -->
+    <script th:inline="javascript">
+
+/*<![CDATA[*/
+    var NumeAcessos = /*[[${propostas[0].numParcelas}]]*/ 'default';
+    
+	var chart = AmCharts.makeChart("chartdiv", {
+	
+	"type" : "funnel",
+	"theme" : "none",
+	"dataProvider" : [ {
+		"title" : "Acessos",
+		"value" : NumeAcessos
+	}, {
+		"title" : "Prop. Visual",
+		"value" : 123
+	}, {
+		"title" : "Prop. Aceitas",
+		"value" : 98
+	}, {
+		"title" : "Boletos Gerados",
+		"value" : 72
+	}, {
+		"title" : "Pagamentos",
+		"value" : 35
+	}, {
+		"title" : "Contra Propostas",
+		"value" : 35
+	}, {
+		"title" : "Cadastros",
+		"value" : 128
+	} ],
+	
+	"balloon" : {
+		"fixedPosition" : true
+	},
+	"valueField" : "value",
+	"titleField" : "title",
+	"marginRight" : 240,
+	"marginLeft" : 50,
+	"startX" : -500,
+	"depth3D" : 100,
+	"angle" : 40,
+	"outlineAlpha" : 1,
+	"outlineColor" : "#FFFFFF",
+	"outlineThickness" : 2,
+	"labelPosition" : "right",
+	"balloonText" : "[[title]]: [[value]]n[[description]]",
+	"export" : {
+		"enabled" : true
+	}
+});
+
+/*]]>*/
+
+
+
+</script>
     <script th:replace="comum :: jqueryjs" />
     <script th:replace="comum :: jqueryuijs" />
     <script th:replace="comum :: momentjs" />

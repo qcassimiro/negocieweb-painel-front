@@ -33,6 +33,8 @@
                             </fieldset>
                         </form>
                     </div>
+                    <span th:if="${param.erro}" th:text="'Credenciais incorretas.'" />
+                    <span th:if="${param.logout}" th:text="'Sessão encerrada.'" />
                 </div>
             </div>
         </div>

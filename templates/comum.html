@@ -22,6 +22,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link th:href="@{/css/painel.css}" rel="stylesheet" />
+    <!-- AmCharts CSS -->
+<link th:fragment="amcharts.css" rel="stylesheet"
+	href="https://www.amcharts.com/lib/3/plugins/export/export.css"
+	type="text/css" media="all" />
+	<link rel="icon" type="image/png" th:href="@{~/img/favicon.png}"/>
 </head>
 
 <body>
@@ -39,7 +44,7 @@
             <!-- [-] navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-envelope fa-fw orangeicon"></i> <i class="fa fa-caret-down orangeicon"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
@@ -86,8 +91,8 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-tasks fa-fw"></i>
-                        <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-tasks fa-fw orangeicon"></i>
+                        <i class="fa fa-caret-down orangeicon"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-tasks">
                         <li>
@@ -162,8 +167,8 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw"></i>
-                        <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bell fa-fw orangeicon"></i>
+                        <i class="fa fa-caret-down orangeicon"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
@@ -214,11 +219,11 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-                        <i class="fa fa-caret-down"></i>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw orangeicon"></i>
+                        <i class="fa fa-caret-down orangeicon"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User
+                        <li><a href="#"><i class="fa fa-user fa-fw "></i> User
                                 Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -234,13 +239,23 @@
                     </form>
                 </li>
             </ul>
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li><a th:href="@{/}"><i class="fa fa-folder fa-fw"></i>Resultados</a></li>
+            <div class="navbar-default sidebar" role="navigation sidebar-new">
+                <div class="sidebar-nav navbar-collapse sidebar-new">
+                    <ul class="nav" id="side-menu"  style="text-align: center;">
+                    
+                   <!--     <li><a th:href="@{/}"><i class="fa fa-folder fa-fw"></i>Resultados</a></li>
                         <li><a th:href="@{/resdia}"><i class="fa fa-folder fa-fw"></i>Resultados Diários</a></li>
                         <li><a th:href="@{/acoes}"><i class="fa fa-folder fa-fw"></i>Ações</a></li>
-                        <li><a th:href="@{/calendario}"><i class="fa fa-calendar fa-fw"></i>Calendário</a></li>
+                        <li><a th:href="@{/calendario}"><i class="fa fa-calendar fa-fw"></i>Calendário</a></li> --> 
+                        
+						<li><a th:href="@{/}" class="whitelink teste"><i
+								class="fa fa-folder fa-fw fa-2x teste"></i> Resultados</a></li>
+						<li><a th:href="@{/resdia}" class="whitelink teste"><i
+								class="fa fa-folder fa-fw fa-2x teste"></i> Resultados Diários</a></li>
+						<li><a th:href="@{/acoes}" class="whitelink teste"><i
+								class="fa fa-folder fa-fw fa-2x teste"></i> Ações</a></li>
+						<li><a th:href="@{/calendario}" class="whitelink teste"><i
+								class="fa fa-calendar fa-fw fa-2x teste"></i> Calendário</a></li>
                     </ul>
                 </div>
             </div>

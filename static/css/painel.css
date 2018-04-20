@@ -449,6 +449,7 @@
  #calendar {
      margin: 20px;
      padding: 0 10px;
+     background-color: #eeeeee;
 }
  .hidden {
      display: none;
@@ -496,4 +497,8 @@
      color: black;
      text-align: center;
      border-radius: 0px 0px 25px 25px;
+}
+
+#page-wrapper {
+    background-image: url("../img/negocieweb-background.png");
 }

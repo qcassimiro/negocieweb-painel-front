@@ -503,6 +503,9 @@
     background-image: url("../img/negocieweb-background.png");
     margin-left: 100px !important;
 }
+.newbackground{
+	background: url("../img/negocieweb-background.png");	
+}
 #chartdiv {
 	widht: 100%;
 	height: 400px;
@@ -550,4 +553,10 @@
 .msglogin{
 	text-align: center !important;
 	color: #F19748 !important;
+}
+.filterbutton{
+	position: absolute;
+	top: 70px;
+	left: 110px;
+	color: #512DA8;
 }

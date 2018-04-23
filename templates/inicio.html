@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="comum :: head (title='Ações')">
+<head th:include="comum :: head (title='Início')">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,7 +13,7 @@
     <!-- [+] container -->
     <div id="container">
         <!-- [+] navbar -->
-        <nav th:replace="comum :: navbar" />
+        <nav th:replace="comum :: navbar"></nav>
         <!-- [-] navbar -->
         <!-- [+] page-wrapper -->
         <div id="page-wrapper">
@@ -31,19 +31,20 @@
                 </div>
             </div>
         </div>
-        <!-- [-] page-wrapper -->
     </div>
-    <!-- [-] container -->
-    <script th:replace="comum :: jqueryjs" />
-    <script th:replace="comum :: jqueryuijs" />
-    <script th:replace="comum :: momentjs" />
-    <script th:replace="comum :: fullcalendarjs" />
-    <script th:replace="comum :: fullcalendarlangjs" />
-    <script th:replace="comum :: bootstrapjs" />
-    <script th:replace="comum :: metisjs" />
-    <script th:replace="comum :: morrisjs" />
-    <script th:replace="comum :: raphaeljs" />
-    <script th:replace="comum :: customjs" />
+    <script th:replace="comum :: jqueryjs"></script>
+    <script th:replace="comum :: jqueryuijs"></script>
+    <script th:replace="comum :: momentjs"></script>
+    <script th:replace="comum :: fullcalendarjs"></script>
+    <script th:replace="comum :: fullcalendarlangjs"></script>
+    <script th:replace="comum :: bootstrapjs"></script>
+    <script th:replace="comum :: metisjs"></script>
+    <script th:replace="comum :: morrisjs"></script>
+    <script th:replace="comum :: raphaeljs"></script>
+    <script th:replace="comum :: amchartsjs"></script>
+    <script th:replace="comum :: amchartsfunneljs"></script>
+    <script th:replace="comum :: amchartslightjs"></script>
+    <script th:replace="comum :: customjs"></script>
 </body>
 
 </html>

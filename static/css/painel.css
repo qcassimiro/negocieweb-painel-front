@@ -554,9 +554,24 @@
 	text-align: center !important;
 	color: #F19748 !important;
 }
-.filterbutton{
-	position: absolute;
-	top: 70px;
-	left: 110px;
-	color: #512DA8;
+.apply-button{
+	background-color: #9373d9;
+	margin-right: 3px;
+	color: whitesmoke;
+	border: 1px solid #512DA8;
 }
+.removefilterbutton{
+	background-color:#9999ff;
+	color: whitesmoke;
+	border: 1px solid #512DA8;
+}
+.borderform{
+	border: 1px solid #512DA8;	
+}
+label {
+  display: block;
+}
+
+input{
+  display:inline;
+  }

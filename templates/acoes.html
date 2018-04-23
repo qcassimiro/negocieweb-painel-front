@@ -17,150 +17,126 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="text-center">
-							<span th:text="'icone: ' + ${usuario.icone}"></span>
-						</div>
-						<ol class="breadcrumb">
+						<ol class="breadcrumb" style="margin-top: 20px;">
 							<li><i class="fa fa-home"></i>&nbsp;&nbsp;<a th:href="@{/}">Início</a></li>
 							<li><i class="fa fa-folder"></i>&nbsp;&nbsp;<a
 								th:href="@{/acoes}">Ações</a></li>
 						</ol>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="panel panel-default container-fluid"  style="padding-bottom: 20px; padding-top: 20px">	
-								<div class="col-sm-4" align="center">
-									<div>
-										<span>Data de Geração</span>
-									</div>
-									<div style="margin-right: 5px; padding: 5px;">
-									<input placeholder="Data inicial" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>					
-									</div>
-									<div style="margin-right: 5px; padding: 5px;">
-									<input placeholder="Data final" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>					
-									</div>
-
-								</div>
-								<div class="col-sm-4" align="center">
-									<div>
-										<span>Data de Vencimento</span>
-									</div>
-									<div style="margin-right: 5px; padding: 5px;">
-										<input placeholder="Data inicial" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>					
-									</div>
-									<div style="margin-right: 5px; padding: 5px;">
-									<input placeholder="Data final" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>					
-									</div>
-								</div>
-								<div class="col-sm-4" align="center">
-									<div style="padding-bottom: 5px;">
-										<span>Carteira</span>
-									</div>
-
-									<select class="borderform form-control" value="Carteira X"
-										style="padding: 5px;">
-										<option>Carteira O</option>
-										<option>Carteira Y</option>
-										<option>Carteira Z</option>
-										<option>Carteira A</option>
-									</select>
-									<li style="list-style-type: none" align="right"> <button class="apply-button rounded-box">Aplicar</button>
-									<button class="removefilterbutton rounded-box">Limpar filtro</button></li>
-								</div>
-							</div>
-					</div>
-				</div>
-				<div class="row" th:each="acao : ${acoes}">
-					<div class="col-lg-12">
-						<div class="panel panel-default container-fluid">
-							<div class="panel-heading row heading-font rounded-heading">
-								<div class="col-xs-4">
-									<a class="data-font"
-										th:href="@{'/acoes/' + ${acao.idAcaoMascara}}"
-										th:text="@{'Lote ' + ${acao.idAcaoMascara}}"></a>
-								</div>
-								<div class="col-xs-4 text-center">
-									<span th:text="${acao.carteira}"></span>
-								</div>
-								<div class="col-xs-4 text-right">
-									<img th:src="${acao.icone}" height="24" />
-								</div>
-							</div>
-							<div class="panel-body text-center">
-								<div class="row align-items-center">
-									<div class="col-md-2 col-md-offset-0 rounded-box">
-										<span>Número de Clientes</span> <br /> <span
-											class="data-font"
-											th:text="${#numbers.formatDecimal(acao.numClientes, 0, 'POINT', 0, 'COMMA')}"></span>
-									</div>
-									<div class="col-md-2 col-md-offset-0 rounded-box">
-										<span>Número de Propostas</span> <br /> <span
-											class="data-font"
-											th:text="${#numbers.formatDecimal(acao.numPropostas, 0, 'POINT', 0, 'COMMA')}"></span>
-									</div>
-									<div class="col-md-2 col-md-offset-0 rounded-box">
-										<span>Valor Financeiro</span> <br /> <span class="data-font"
-											th:text="@{'R$ ' + ${#numbers.formatDecimal(acao.valorFinanceiro, 0, 'POINT', 2, 'COMMA')}}"></span>
-									</div>
-									<div class="col-md-2 col-md-offset-0 rounded-box">
-										<span>Ticket Médio</span> <br /> <span class="data-font"
-											th:text="@{'R$ ' + ${#numbers.formatDecimal(acao.ticketMedio, 0, 'POINT', 2, 'COMMA')}}"></span>
-									</div>
-									<div class="col-md-2 col-md-offset-2 rounded-box">
-										<span class=" data-font" th:text="${acao.statusAcao}"></span>
-									</div>
-								</div>
-								<div class="row align-items-center">
-									<div class="col-md-1 col-md-offset-0 rounded-box"
-										title="Data de Envio">
-										<span class="fa fa-calendar-plus-o"></span>&nbsp;&nbsp;<span
-											class="data-font"
-											th:text="${acao.dtEnvio} == null ? '--/--' : ${#dates.format(acao.dtEnvio, 'dd/MM')}"></span>
-									</div>
-									<div class="col-md-1 col-md-offset-0 rounded-box"
-										title="Data de Aprovação">
-										<span class="fa fa-calendar-check-o"></span>&nbsp;&nbsp;<span
-											class="data-font"
-											th:text="${acao.dtAprovacao} == null ? '--/--' : ${#dates.format(acao.dtAprovacao, 'dd/MM')}"></span>
-									</div>
-									<div class="col-md-1 col-md-offset-0 rounded-box"
-										title="Data de Vencimento">
-										<span class="fa fa-calendar-minus-o"></span>&nbsp;&nbsp;<span
-											class="data-font"
-											th:text="${acao.dtValidade} == null ? '--/--' : ${#dates.format(acao.dtValidade, 'dd/MM')}"></span>
-									</div>
-									<form method="get">
-										<button
-											class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg"
-											title="Email"></button>
-									</form>
-									<form method="get">
-										<button
-											class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg"
-											title="SMS"></button>
-									</form>
-									<form th:action="@{'/acoes/' + ${acao.idAcaoMascara}}"
-										method="get">
-										<button
-											class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-info-circle fa-lg"
-											title="Detalhes"></button>
-									</form>
-									<form method="get">
-										<button
-											class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-times-circle fa-lg"
-											title="Cancelar"></button>
-									</form>
-									<form method="get">
-										<button
-											class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-check-circle fa-lg"
-											title="Aprovar"></button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default container-fluid"  style="padding-bottom: 20px; padding-top: 20px">    
+                            <div class="col-sm-4" align="center">
+                                <div>
+                                    <span>Data de Geração</span>
+                                </div>
+                                <div style="margin-right: 5px; padding: 5px;">
+                                    <input placeholder="Data inicial" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>                    
+                                </div>
+                                <div style="margin-right: 5px; padding: 5px;">
+                                    <input placeholder="Data final" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>                    
+                                </div>
+                            </div>
+                        <div class="col-sm-4" align="center">
+                            <div>
+                                <span>Data de Vencimento</span>
+                            </div>
+                            <div style="margin-right: 5px; padding: 5px;">
+                                <input placeholder="Data inicial" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>                    
+                            </div>
+                                <div style="margin-right: 5px; padding: 5px;">
+                                    <input placeholder="Data final" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')"  id="date"/>                    
+                                </div>
+                            </div>
+                            <div class="col-sm-4" align="center">
+                                <div style="padding-bottom: 5px;">
+                                    <span>Carteira</span>
+                                </div>
+                                <select class="borderform form-control" value="Carteira X" style="padding: 5px;">
+                                    <option>Carteira O</option>
+                                    <option>Carteira Y</option>
+                                    <option>Carteira Z</option>
+                                    <option>Carteira A</option>
+                                </select>
+                                <div style="list-style-type: none" align="right">
+                                    <button class="apply-button rounded-box">Aplicar</button>
+                                    <button class="removefilterbutton rounded-box">Limpar filtro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" th:each="acao : ${acoes}">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default container-fluid">
+                            <div class="panel-heading row heading-font rounded-heading">
+                                <div class="col-xs-4">
+                                    <a class="data-font" th:href="@{'/acoes/' + ${acao.idAcaoMascara}}" th:text="@{'Lote ' + ${acao.idAcaoMascara}}"></a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <span th:text="${acao.carteira}"></span>
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <img th:src="${acao.icone}" height="24" />
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Número de Clientes</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(acao.numClientes, 0, 'POINT', 0, 'COMMA')}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Número de Propostas</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(acao.numPropostas, 0, 'POINT', 0, 'COMMA')}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Valor Financeiro</span>
+                                        <br />
+                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(acao.valorFinanceiro, 0, 'POINT', 2, 'COMMA')}}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Ticket Médio</span>
+                                        <br />
+                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(acao.ticketMedio, 0, 'POINT', 2, 'COMMA')}}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-2 rounded-box">
+                                        <span class=" data-font" th:text="${acao.statusAcao}"></span>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-md-1 col-md-offset-0 rounded-box" title="Data de Envio">
+                                        <span class="fa fa-calendar-plus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtEnvio} == null ? '--/--' : ${#dates.format(acao.dtEnvio, 'dd/MM')}"></span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-0 rounded-box" title="Data de Aprovação">
+                                        <span class="fa fa-calendar-check-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtAprovacao} == null ? '--/--' : ${#dates.format(acao.dtAprovacao, 'dd/MM')}"></span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-0 rounded-box" title="Data de Vencimento">
+                                        <span class="fa fa-calendar-minus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtValidade} == null ? '--/--' : ${#dates.format(acao.dtValidade, 'dd/MM')}"></span>
+                                    </div>
+                                    <form method="get">
+                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg" title="Email"></button>
+                                    </form>
+                                    <form method="get">
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg" title="SMS"></button>
+                                    </form>
+                                    <form th:action="@{'/acoes/' + ${acao.idAcaoMascara}}" method="get">
+                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-info-circle fa-lg" title="Detalhes"></button>
+                                    </form>
+                                    <form method="get">
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-times-circle fa-lg" title="Cancelar"></button>
+                                    </form>
+                                    <form method="get">
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-check-circle fa-lg" title="Aprovar"></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>

@@ -108,3 +108,22 @@ $("#submit").click(function() {
         }
     });
 });
+$(document).ready(function() {
+    $("#filter").submit(function() {
+        if($("#dei").val()=="") {
+            $("#dei").remove();
+        }
+        if($("#def").val()=="") {
+            $("#def").remove();
+       }
+        if($("#dvi").val()=="") {
+            $("#dvi").remove();
+       }
+        if($("#dvf").val()=="") {
+            $("#dvf").remove();
+        }
+        if($("#car").val()=="") {
+            $("#car").remove();
+        }
+    });
+ });

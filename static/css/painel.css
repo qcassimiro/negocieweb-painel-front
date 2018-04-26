@@ -590,21 +590,21 @@ input{
     background-color: #641919;
     background-repeat:no-repeat;
     border: #641919;
-    cursor: pointer;
+    cursor: default;
     padding: 10px;
 }
 .envio {
     background-color: #191964;
     background-repeat:no-repeat;
     border: #191964;
-    cursor:pointer;
+    cursor:default;
     padding: 10px;
 }
 .aprovacao {
     background-color: #196419;
     background-repeat:no-repeat;
     border: #196419;
-    cursor:pointer;
+    cursor:default;
     padding: 10px;
 }
 .buttonsubtitle{

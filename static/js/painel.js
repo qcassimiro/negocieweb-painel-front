@@ -71,14 +71,14 @@ $(function() {
                 });
             },
             eventRender: function eventRender(event, element, view) {
-                return ['todos', event.tipoEvento].indexOf($('#event-selector').val()) >= 0
+                return ['todos', event.tipoEvento].indexOf($('#tipo-selector').val()) >= 0
             }
         });
     });
 });
 
 $(function() {
-    $('#event-selector').on('change', function() {
+    $('#tipo-selector').on('change', function() {
         $('#calendar').fullCalendar('rerenderEvents');
     });
 });

@@ -449,7 +449,7 @@
  #calendar {
      margin: 20px;
      padding: 0 10px;
-     background-color: #eeeeee;
+     background-color: rgba(0, 0, 0, 0);;
 }
  .hidden {
      display: none;

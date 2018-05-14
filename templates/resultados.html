@@ -171,12 +171,6 @@
     <script th:replace="comum :: customjs"></script>
     <script th:inline="javascript">
     /*<![CDATA[*/
-        var numAcessos = /*[[${#aggregates.sum(resultados.![numAcessos])}]]*/;
-        var numVisualProp = /*[[${#aggregates.sum(resultados.![numVisualProp])}]]*/;
-        var numAceiteProp = /*[[${#aggregates.sum(resultados.![numAceiteProp])}]]*/;
-        var numBoletosGerados = /*[[${#aggregates.sum(resultados.![numBoletosGerados])}]]*/;
-        var numPagamentos = /*[[${#aggregates.sum(resultados.![numPagamentos])}]]*/;
-        var numContraProp = /*[[${#aggregates.sum(resultados.![numContraProp])}]]*/;
         var chart = AmCharts.makeChart(
             "chartdiv",
             {
@@ -185,28 +179,28 @@
                 "dataProvider" : [
                                      {
                                          "title" : "Acessos",
-                                         "value" : numAcessos
+                                         "value" : /*[[${#aggregates.sum(resultados.![numAcessos])}]]*/
                                      },
                                      {
                                          "title" : "Propostas Visualizadas",
-                                         "value" : numVisualProp
+                                         "value" : /*[[${#aggregates.sum(resultados.![numVisualProp])}]]*/
                                      },
                                      {
                                          "title" : "Propostas Aceitas",
-                                         "value" : numAceiteProp
+                                         "value" : /*[[${#aggregates.sum(resultados.![numAceiteProp])}]]*/
                                      },
                                      {
                                          "title" : "Contrapropostas",
-                                         "value" : numContraProp
+                                         "value" : /*[[${#aggregates.sum(resultados.![numContraProp])}]]*/
                                      },
                                      {
                                          "title" : "Boletos Gerados",
-                                         "value" : numBoletosGerados
+                                         "value" : /*[[${#aggregates.sum(resultados.![numBoletosGerados])}]]*/
                                      },
                                      {
                                          "title" : "Pagamentos",
-                                         "value" : numPagamentos
-                                     },
+                                         "value" : /*[[${#aggregates.sum(resultados.![numPagamentos])}]]*/
+                                     }
                                  ],
                 "balloon" : {
                                 "fixedPosition" : true

@@ -44,11 +44,19 @@
                             </div>
                             -->
                             <form th:action="@{/resdia}" method="get" id="filter">
-                                <fieldset>
+                                <fieldset th:with="today = ${#calendars.createToday()}">
                                     <div class="col-sm-4" align="center">
-                                        <div><span>Data de Geração</span></div>
-                                        <div style="margin-right: 5px; padding: 5px;"><input placeholder="Data inicial" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')" name="dei" id="dei"/></div>
-                                        <div style="margin-right: 5px; padding: 5px;"><input placeholder="Data final" class="textbox-n form-control borderform" type="text" onfocus="(this.type='date')" name="def" id="def"/></div>
+                                        <div>
+                                            <span>Data de Geração</span>
+                                        </div>
+                                        <div style="margin-right: 5px; padding: 5px;">
+                                            <input class="textbox-n form-control borderform" type="date" name="dei" id="dei" th:value="${#httpServletRequest.getParameter('dei')} ? ${#httpServletRequest.getParameter('dei')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today) - 1, #calendars.day(today)), 'yyyy-MM-dd')}" />
+                                        </div>
+                                        <div style="margin-right: 5px; padding: 5px;">
+                                            <input class="textbox-n form-control borderform" type="date" name="def" id="def" th:value="${#httpServletRequest.getParameter('def')} ? ${#httpServletRequest.getParameter('def')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today), #calendars.day(today) + 1), 'yyyy-MM-dd')}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" align="center">
                                         <div style="list-style-type: none" align="right"><button class="apply-acoes rounded-box" type="submit">Aplicar</button></div>
                                     </div>
                                 </fieldset>

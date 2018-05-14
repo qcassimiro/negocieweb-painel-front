@@ -28,20 +28,18 @@
                         <div class="panel panel-default container-fluid"  style="padding-bottom: 20px; padding-top: 20px">
                             <form th:action="@{/resdia}" method="get" id="filter">
                                 <fieldset th:with="today = ${#calendars.createToday()}">
-                                    <div class="col-sm-4" align="center">
-                                        <div>
-                                            <span>Data de Geração</span>
-                                        </div>
-                                        <div style="margin-right: 5px; padding: 5px;">
+                                    <div class="form-inline" align="left">
+                                        <div class="form-group" style="margin-right: 5px; margin-top: 7px; font-size: 16px;">
+                                    <span>Data de Geração:</span></div>
+                                        <div class="form-group" style="margin-right: 5px; padding: 5px;">
                                             <input class="textbox-n form-control borderform" type="date" name="dei" id="dei" th:value="${#httpServletRequest.getParameter('dei')} ? ${#httpServletRequest.getParameter('dei')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today) - 1, #calendars.day(today)), 'yyyy-MM-dd')}" />
                                         </div>
-                                        <div style="margin-right: 5px; padding: 5px;">
-                                            <input class="textbox-n form-control borderform" type="date" name="def" id="def" th:value="${#httpServletRequest.getParameter('def')} ? ${#httpServletRequest.getParameter('def')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today), #calendars.day(today) + 1), 'yyyy-MM-dd')}" />
+                                        <div class="form-group" style="margin-right: 5px; padding: 5px;">
+                                            <input class="form-group textbox-n form-control borderform" type="date" name="def" id="def" th:value="${#httpServletRequest.getParameter('def')} ? ${#httpServletRequest.getParameter('def')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today), #calendars.day(today) + 1), 'yyyy-MM-dd')}" />
                                         </div>
-                                    </div>
-                                    <div class="col-sm-4" align="center">
-                                        <div style="list-style-type: none" align="right"><button class="apply-acoes rounded-box" type="submit">Aplicar</button></div>
-                                    </div>
+										<div class="form-group"  style="list-style-type: none" align="left"><button class=" form-group apply-acoes rounded-box" type="submit">Aplicar</button></div> 
+                                    </div>   
+                                 
                                 </fieldset>
                             </form>
                         </div>

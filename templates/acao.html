@@ -235,13 +235,6 @@
     <script th:replace="comum :: customjs"></script>
     <script th:inline="javascript">
     /*<![CDATA[*/
-        var NumeAcessos = /*[[${resultado.numAcessos}]]*/ 'default';
-        var NumePropVisual = /*[[${resultado.numVisualProp}]]*/ 'default';
-        var NumeAceitProp = /*[[${resultado.numAceiteProp}]]*/ 'default';
-        var NumeContraprop = /*[[${resultado.numContraProp}]]*/ 'default';
-        var NumeBoletoGer = /*[[${resultado.numBoletosGerados}]]*/ 'default';
-        var NumePagamentos = /*[[${resultado.numPagamentos}]]*/ 'default';
-        var NumeAtCadastros = /*[[${resultado.numAtCadastro}]]*/ 'default';
         var chart = AmCharts.makeChart(
             "chartdiv",
             {
@@ -250,54 +243,53 @@
                 "dataProvider" : [
                                      {
                                          "title" : "Acessos",
-                                         "value" : NumeAcessos
+                                         "value" : /*[[${resultado.numAcessos}]]*/
                                      },
                                      {
-                                         "title" : "Prop. Visualizadas",
-                                         "value" : NumePropVisual
+                                         "title" : "Propostas Visualizadas",
+                                         "value" : /*[[${resultado.numVisualProp}]]*/
                                      },
                                      {
-                                         "title" : "Prop. Aceitas",
-                                         "value" : NumeAceitProp
+                                         "title" : "Propostas Aceitas",
+                                         "value" : /*[[${resultado.numAceiteProp}]]*/
+                                     },
+                                     {
+                                         "title" : "Contrapropostas",
+                                         "value" : /*[[${resultado.numContraProp}]]*/
                                      },
                                      {
                                          "title" : "Boletos Gerados",
-                                         "value" : NumeBoletoGer
+                                         "value" : /*[[${resultado.numBoletosGerados}]]*/
                                      },
                                      {
                                          "title" : "Pagamentos",
-                                         "value" : NumePagamentos
+                                         "value" : /*[[${resultado.numPagamentos}]]*/
                                      },
                                      {
-                                         "title" : "Contra Propostas",
-                                         "value" : NumeContraprop
-                                     },
-                                     {
-                                         "title" : "At. Cadastrais",
-                                         "value" : NumeAtCadastros
+                                         "title" : "Atualizações Cadastrais",
+                                         "value" : /*[[${resultado.numAtCadastro}]]*/
                                      }
                                  ],
-    
-            "balloon" : {
-                            "fixedPosition" : true
-                        },
-            "valueField" : "value",
-            "titleField" : "title",
-            "marginRight" : 200,
-            "marginLeft" : 50,
-            "startX" : -500,
-            "depth3D" : 25,
-            "angle" : 45,
-            "outlineAlpha" : 1,
-            "outlineColor" : "#FFFFFF",
-            "outlineThickness" : 2,
-            "labelPosition" : "right",
-            "balloonText" : "",
-            "export" : {
-                           "enabled" : true
-                       },
-            "hideCredits" : true
-            }
+                "balloon" : {
+                                "fixedPosition" : true
+                            },
+                "valueField" : "value",
+                "titleField" : "title",
+                "marginRight" : 200,
+                "marginLeft" : 50,
+                "startX" : -500,
+                "depth3D" : 25,
+                "angle" : 45,
+                "outlineAlpha" : 1,
+                "outlineColor" : "#FFFFFF",
+                "outlineThickness" : 2,
+                "labelPosition" : "right",
+                "balloonText" : "",
+                "export" : {
+                               "enabled" : true
+                           },
+                "hideCredits" : true
+                }
         );
     /*]]>*/
     </script>

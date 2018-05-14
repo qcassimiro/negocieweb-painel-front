@@ -10,12 +10,8 @@
 </head>
 
 <body>
-    <!-- [+] container -->
     <div id="container">
-        <!-- [+] navbar -->
         <nav th:replace="comum :: navbar"></nav>
-        <!-- [-] navbar -->
-        <!-- [+] page-wrapper -->
         <div id="page-wrapper">
         <button onclick="topFunction()" id="myBtn" title="Go to top">&uarr;</button>            
             <div class="container-fluid">
@@ -30,19 +26,6 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="panel panel-default container-fluid"  style="padding-bottom: 20px; padding-top: 20px">
-                            <!-- 
-                            <div class="form-inline">
-                                <div class="form-group" style="margin-right: 5px; margin-top: 7px; font-size: 16px;">
-                                    <span>Data de Geração:</span>
-                                </div>
-                                <div class="form-group datepicker" style="margin-right: 5px; padding: 5px;"><input placeholder="Data inicial" class="textbox-n form-control borderform data" type="text" onfocus="(this.type='Date')" id="datr" /></div>
-                                <div class="form-group" style="margin-right: 5px; padding: 5px;"><input placeholder="Data final" class="textbox-n form-control borderform data" type="text" onfocus="(this.type='Date')" id="Date" /></div>
-                                <div class="form-group" style="list-style-type: none">
-                                    <button class="apply-button rounded-box">Aplicar</button>
-                                    <button class="removefilterbutton rounded-box">Limpar filtro</button>
-                                </div> 
-                            </div>
-                            -->
                             <form th:action="@{/resdia}" method="get" id="filter">
                                 <fieldset th:with="today = ${#calendars.createToday()}">
                                     <div class="col-sm-4" align="center">

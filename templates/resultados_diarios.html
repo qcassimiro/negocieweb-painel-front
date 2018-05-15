@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" th:if="${resultados}">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading heading-font rounded-heading text-center">Acumulado</div>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" th:if="${resultados}">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading heading-font rounded-heading text-center">
@@ -107,7 +107,7 @@
     <script th:replace="comum :: amchartsserialjs"></script>
     <script th:replace="comum :: amchartslightjs"></script>
     <script th:replace="comum :: customjs"></script>
-    <script th:inline="javascript">
+    <script th:inline="javascript" th:if="${resultados}">
     /*<![CDATA[*/
         var chart = AmCharts.makeChart(
             "chartdiv",

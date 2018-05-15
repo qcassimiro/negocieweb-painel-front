@@ -134,7 +134,8 @@
                                     </thead>
                                     <tbody>
                                         <tr th:each="resultado : ${resultados}">
-                                            <td class="text-center" th:text="${resultado.idAcaoMascara}"></td>
+                                            <!-- <td class="text-center" th:text="${resultado.idAcaoMascara}"></td> -->
+                                            <td class="text-center"><a th:href="@{'/acoes/' + ${resultado.idAcaoMascara}}" th:text="${resultado.idAcaoMascara}"></a></td>
                                             <td class="text-center" th:text="${resultado.carteira}"></td>
                                             <td class="text-center" th:text="${resultado.statusAcao}"></td>
                                             <td class="text-center" th:text="${resultado.dtEnvio} == null ? '--/--' : ${#dates.format(resultado.dtEnvio, 'dd/MM')}"></td>

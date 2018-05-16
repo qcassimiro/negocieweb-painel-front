@@ -1,5 +1,5 @@
 $(function() {
-    $('#side-menu').metisMenu();
+    $('#side-menu').metisMenu();//Utilizado pelo comum, portanto em todas;
 });
 
 $(function() {

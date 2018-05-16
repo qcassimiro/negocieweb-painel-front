@@ -33,10 +33,10 @@
                                         <div>
                                             <span>Data de Geração</span>
                                         </div>
-                                        <div style="margin-right: 5px; padding: 5px;">
+                                        <div class="datestyle">
                                             <input class="textbox-n form-control borderform" type="date" name="dei" id="dei" th:value="${#httpServletRequest.getParameter('dei')} ? ${#httpServletRequest.getParameter('dei')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today) - 1, #calendars.day(today)), 'yyyy-MM-dd')}" />
                                         </div>
-                                        <div style="margin-right: 5px; padding: 5px;">
+                                        <div class="datestyle">
                                             <input class="textbox-n form-control borderform" type="date" name="def" id="def" th:value="${#httpServletRequest.getParameter('def')} ? ${#httpServletRequest.getParameter('def')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today), #calendars.day(today) + 1), 'yyyy-MM-dd')}" />
                                         </div>
                                     </div>
@@ -44,18 +44,18 @@
                                         <div>
                                             <span>Data de Vencimento</span>
                                         </div>
-                                        <div style="margin-right: 5px; padding: 5px;">
+                                        <div class="datestyle">
                                             <input class="textbox-n form-control borderform" type="date" name="dvi" id="dvi" th:value="${#httpServletRequest.getParameter('dvi')} ? ${#httpServletRequest.getParameter('dvi')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today) - 1, #calendars.day(today)), 'yyyy-MM-dd')}" />
                                         </div>
-                                        <div style="margin-right: 5px; padding: 5px;">
+                                        <div class="datestyle">
                                             <input class="textbox-n form-control borderform" type="date" name="dvf" id="dvf" th:value="${#httpServletRequest.getParameter('dvf')} ? ${#httpServletRequest.getParameter('dvf')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today) + 1, #calendars.day(today)), 'yyyy-MM-dd')}" />
                                         </div>
                                     </div>
                                     <div class="col-sm-4" align="center">
-                                        <div style="padding-bottom: 5px;">
+                                        <div class="paddingbottom5">
                                             <span>Carteira</span>
                                         </div>
-                                        <select class="borderform form-control" name="car" id="car" style="padding: 5px;">
+                                        <select class="borderform form-control" name="car" id="car">
                                             <option th:value="${'0'}" th:text="${'TODAS'}"></option>
                                             <option th:each="carteira : ${carteiras}" th:value="${carteira.idCarteira}" th:text="${carteira.nomeAmigavel}" th:selected="${carteira.idCarteira} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>
                                         </select>
@@ -136,18 +136,8 @@
         </div>
     </div>
     <script th:replace="comum :: jqueryjs"></script>
-    <script th:replace="comum :: jqueryuijs"></script>
-    <script th:replace="comum :: momentjs"></script>
-    <script th:replace="comum :: fullcalendarjs"></script>
-    <script th:replace="comum :: fullcalendarlangjs"></script>
     <script th:replace="comum :: bootstrapjs"></script>
-    <script th:replace="comum :: metisjs"></script>
-    <script th:replace="comum :: morrisjs"></script>
-    <script th:replace="comum :: raphaeljs"></script>
-    <script th:replace="comum :: amchartsjs"></script>
-    <script th:replace="comum :: amchartsfunneljs"></script>
-    <script th:replace="comum :: amchartslightjs"></script>
-    <script th:replace="comum :: customjs"></script>
+	<script th:replace="comum :: customjs"></script>
 </body>
 
 </html>

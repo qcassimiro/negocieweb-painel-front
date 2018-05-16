@@ -14,11 +14,11 @@
     <div id="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Autenticação</h3>
+                <div class="login-panel panel panel-default" style="border-radius: 20px;">
+                    <div class="panel-heading paneloginzao" align="center">
+                        <img class=" animation" th:src="@{'/img/negocieweb-logo.png'}" height="35"/>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" style="padding: 35px;">
                         <form th:action="@{/login}" method="post" role="form">
                             <fieldset>
                                 <div class="form-group">

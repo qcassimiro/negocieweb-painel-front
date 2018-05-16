@@ -396,3 +396,21 @@ input{
 .buttondiv{
 	    padding-bottom: 8px;
 }
+.paddingtop{
+	 padding-top: 10px;
+}
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: #8064A2 !important;
+    border-color: #512DA8 !important;
+}
+.paneloginzao{
+	border-radius: 18px 18px 0 0;
+	border-color: transparent !important;
+	}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.animation{
+    -webkit-animation: fadein 3s;
+}

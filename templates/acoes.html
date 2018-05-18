@@ -13,7 +13,7 @@
     <div id="container">
         <nav th:replace="comum :: navbar"></nav>
         <div id="page-wrapper">
-            <button onclick="topFunction()" id="myBtn" title="Topo">&uarr;</button>
+            <button onclick="topFunction()" id="myBtn" title="Topo"><i class="fa fa-arrow-up fa-2x"></i></button>            
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -113,10 +113,10 @@
                                         <span class="fa fa-calendar-minus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtValidade} == null ? '--/--' : ${#dates.format(acao.dtValidade, 'dd/MM')}"></span>
                                     </div>
                                     <form method="get">
-                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg" title="Email"></button>
+                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg" style="color: #cc8800" title="Email"></button>
                                     </form>
                                     <form method="get">
-                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg" title="SMS"></button>
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg" style="color: #0039e6" title="SMS"></button>
                                     </form>
                                     <form th:action="@{'/acoes/' + ${acao.idAcaoMascara}}" method="get">
                                         <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-info-circle fa-lg" title="Detalhes"></button>

@@ -299,14 +299,15 @@
 	bottom: 20px;
 	right: 30px;
 	z-index: 99;
-	font-size: 18px;
+	font-size: 9px;
 	border: none;
 	outline: none;
-	background-color: #5830b5;
+	background-color: #512DA8;
 	color: white;
 	cursor: pointer;
-	padding: 15px;
-	border-radius: 4px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #512DA8;
 }
 #myBtn:hover {
 	background-color: #555;
@@ -316,19 +317,19 @@
 	color: #F19748 !important;
 }
 .apply-button{
-	background-color: #9373d9;
+	background-color: #512DA8;
 	margin-right: 3px;
 	color: whitesmoke;
 	border: 1px solid #512DA8;
 }
 .apply-acoes{
-	background-color: #9373d9;
+	background-color: #512DA8;
 	color: whitesmoke;
 	border: 1px solid #512DA8;
 	width: 11em;  height: 3em;
 }
 .removefilterbutton{
-	background-color:#9999ff;
+	background-color:#512DA8;
 	color: whitesmoke;
 	border: 1px solid #512DA8;
 }
@@ -338,7 +339,9 @@
 label {
   display: block;
 }
-
+a {
+    color: #512DA8 !important;
+}
 input{
   display:inline;
   }
@@ -346,6 +349,11 @@ input:focus {
     outline: none !important;
     border:1px solid #9373d9 !important;
     box-shadow: 0 0 10px #719ECE !important;
+}
+select:focus {
+	outline: none !important;
+    border:1px solid #9373d9 !important;
+    box-shadow: 0 0 10px #719ECE !important;	
 }
 .vencimento {
     background-color: #641919;
@@ -406,7 +414,7 @@ input:focus {
 	 padding-top: 10px;
 }
 .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
-    background-color: #9373d9 !important;
+    background-color: #512DA8 !important;
     border: 1px solid #512DA8;
 }
 .panelogin{
@@ -421,7 +429,7 @@ input:focus {
     -webkit-animation: fadein 1.8s;
 }
 .buttonquit{
-	background-color: #9373d9; 
+	background-color: #512DA8; 
 	border:none; 
-	border-radius: 6px;
+	border-radius:9px;
 }

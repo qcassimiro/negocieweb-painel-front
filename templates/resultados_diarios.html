@@ -103,7 +103,7 @@
             "chartdiv",
             {
                 "type": "serial",
-                "theme": "light",
+                "theme": "none",
                 "language": "br",
                 "dateFormat": "DD/MM",
                 "dataProvider": /*[[${acumulado}]]*/,
@@ -129,63 +129,53 @@
                 "valueAxes": [
                 	             {
                                      "stackType": "regular",
-                                     "gridAlpha": 0.07,
+                                     "gridAlpha": 0.05,
+                                     "axisAlpha": 0,
                                      "labelsEnabled": false
                                  }
                 	         ],
                 "graphs": [
                 	          {
-                	        	  "animationPlayed": true,
                                   "type": "line",
                                   "valueField": "numAtCadastro",
-                                  "fillAlphas": 0.2,
-                                  "title": "Atualizações de Cadastro",
-                                  "bullet": "round",
-                                  "bulletSize": 4
+                                  "fillAlphas": 0.75,
+                                  "title": "Atualizações de Cadastro"
                 	          },{
                                   "type": "line",
                                   "valueField": "numBoletosGerados",
-                                  "fillAlphas": 0.2,
-                                  "title": "Boletos Gerados",
-                                  "bullet": "round",
-                                  "bulletSize": 4
+                                  "fillAlphas": 0.75,
+                                  "title": "Boletos Gerados"
                               },
                               {
                                   "type": "line",
                                   "valueField": "numContraProp",
-                                  "fillAlphas": 0.2,
-                                  "title": "Contrapropostas",
-                                  "bullet": "round",
-                                  "bulletSize": 4
+                                  "fillAlphas": 0.75,
+                                  "title": "Contrapropostas"
                               },
                               {
                                   "type": "line",
                                   "valueField": "numAceiteProp",
-                                  "fillAlphas": 0.2,
-                                  "title": "Propostas Aceitas",
-                                  "bullet": "round",
-                                  "bulletSize": 4
+                                  "fillAlphas": 0.75,
+                                  "title": "Propostas Aceitas"
                               },
                               {
                                   "type": "line",
                                   "valueField": "numVisualProp",
-                                  "fillAlphas": 0.2,
-                                  "title": "Propostas Visualizadas",
-                                  "bullet": "round",
-                                  "bulletSize": 4
+                                  "fillAlphas": 0.75,
+                                  "title": "Propostas Visualizadas"
                               },
                               {
                                   "type": "line",
                                   "valueField": "numAcessos",
-                                  "fillAlphas": 0.2,
-                                  "title": "Acessos",
-                                  "bullet": "round",
-                                  "bulletSize": 4
+                                  "fillAlphas": 0.75,
+                                  "title": "Acessos"
                               },
                 	      ],
                 "legend": {
                               "position": "left"
                 	      },
+                "startDuration" : 0.1,
+                "startEffect" : "easeInSine",
                 "hideCredits" : true
             }
         );

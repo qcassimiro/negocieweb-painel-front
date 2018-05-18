@@ -1,8 +1,4 @@
 $(function() {
-    $('#side-menu').metisMenu();//Utilizado pelo comum, portanto em todas;
-});
-
-$(function() {
     $(window).bind("load resize", function() {
         var topOffset = 50;
         var width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;

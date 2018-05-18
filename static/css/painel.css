@@ -289,7 +289,7 @@
 	color: white !important;
 }
 
-.teste{	
+.corprincipal{	
 	color: #512DA8 !important;
 }
 
@@ -342,7 +342,11 @@ label {
 input{
   display:inline;
   }
-  
+input:focus { 
+    outline: none !important;
+    border:1px solid #9373d9 !important;
+    box-shadow: 0 0 10px #719ECE !important;
+}
 .vencimento {
     background-color: #641919;
     background-repeat:no-repeat;
@@ -402,10 +406,10 @@ input{
 	 padding-top: 10px;
 }
 .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
-    background-color: #8064A2 !important;
-    border-color: #512DA8 !important;
+    background-color: #9373d9 !important;
+    border: 1px solid #512DA8;
 }
-.paneloginzao{
+.panelogin{
 	border-radius: 18px 18px 0 0;
 	border-color: transparent !important;
 	}
@@ -414,5 +418,10 @@ input{
     to   { opacity: 1; }
 }
 .animation{
-    -webkit-animation: fadein 3s;
+    -webkit-animation: fadein 1.8s;
+}
+.buttonquit{
+	background-color: #9373d9; 
+	border:none; 
+	border-radius: 6px;
 }

@@ -85,14 +85,14 @@ window.onscroll = function() {
 
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		document.getElementById("myBtn").style.display = "block";
+		document.getElementById("btn-top").style.display = "block";
 	} else {
-		document.getElementById("myBtn").style.display = "none";
+		document.getElementById("btn-top").style.display = "none";
 	}
 }
 function topFunction() {
 	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
 }
 $("#submit").click(function() {
     $(".data-font").each(function() {
@@ -123,3 +123,23 @@ $(document).ready(function() {
         }
     });
  });
+var $input    = document.getElementById('input-file'),
+$fileName = document.getElementById('file-name');
+
+$input.addEventListener('change', function(){
+$fileName.textContent = this.value;
+});
+
+var clearbutton = document.getElementById('cleardiv');
+var tdFile = document.getElementById('tdFile');
+$(function(){
+	setInterval(oneSecondFunction, 1);
+	});
+
+function oneSecondFunction() {
+	if ($fileName.innerHTML == "" && tdFile === null){
+		clearbutton.classList.add("hidden");	
+	}else{
+		clearbutton.classList.remove("hidden");
+	}
+}

@@ -56,10 +56,7 @@ div.parentElement{
     font-family: fontawesome;
     color: rgba(50, 50, 50, 0.5);
 }
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+/*IDs */
  #wrapper {
     width: 100%;
 }
@@ -68,7 +65,6 @@ div.parentElement{
     min-height: 568px;
     background-color: white;
     background-image: url("../img/negocieweb-background.png");
-    margin-left: 100px !important;
 }
 #chartdiv {
     widht: 100%;
@@ -100,15 +96,70 @@ div.parentElement{
     background-color: whitesmoke;
     color: #512DA8;
 }
+#event-content{
+	padding: 0 !important;
+}
+#detalhes a{
+	display: inline-block;
+	font-size: 12px;
+}
+#tablemodal{
+	margin-top:20px;
+}
+#tablemodal td{
+	padding: 0 !important;
+	text-align: center;
+}
+#tablemodal td p{
+	color: #4d4d4d !important;
+	font-size: 12px;
+}
+#calendar{
+    margin: 10px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.64);;
+}
+#side-menu a{
+	color:#512DA8 !important
+}
+#subtitle button{
+	background-repeat:no-repeat;
+	cursor: default; 
+	padding: 10px;
+}
 @media (min-width: 768px) {
     #page-wrapper {
       position: inherit;
-      margin: 0 0 0 250px;
+      margin: 0 0 0 100px;
       padding: 0 30px;
       border-left: 1px solid #e7e7e7;
     }
 }
- .unstyled-button {
+/*Animations */
+@media (min-width: 768px) {
+    .sidebar {
+      z-index: 1;
+      position: absolute;
+      width: 100px;
+      margin-top: 51px;
+      text-align: left;
+	}
+    .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
+      margin-left: auto;
+    }
+}
+@media only screen and (max-width: 770px) {
+    #side-menu {
+        text-align: left !important;
+    }
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/*Classes */
+.unstyled-button {
     border: none;
     padding: 0;
     background: none;
@@ -183,17 +234,6 @@ div.parentElement{
 }
  .sidebar .nav-third-level li a {
     padding-left: 52px;
-}
- @media (min-width: 768px) {
-    .sidebar {
-      z-index: 1;
-      position: absolute;
-      width: 100px;
-      margin-top: 51px;
-    }
-    .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
-      margin-left: auto;
-    }
 }
  .btn-outline {
     color: inherit;
@@ -275,23 +315,7 @@ div.parentElement{
  .row {
     font-size: 90%;
 }
- .timeline {
-    position: relative;
-    padding: 20px 0 20px;
-    list-style: none;
-}
- .timeline:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    margin-left: -1.5px;
-    background-color: #eeeeee;
-}
-
- .rounded-box {
+.rounded-box {
     padding: 8px;
     border-radius: 32px;
     margin-top: 8px;
@@ -312,11 +336,8 @@ div.parentElement{
  .btn:focus{
     outline: none;
 }
- #calendar {
-    margin: 10px;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.64);;
+.fc-title{
+    color: whitesmoke !important;
 }
  .hidden {
     display: none;
@@ -327,23 +348,6 @@ div.parentElement{
 .navbarcustom{
     background: white;
     box-shadow: 0px 1px 6px 0px rgba(68,68,68,0.1)
-}
-
-.orangeicon{
-    color: #F19748 !important;
-}
-
-.sidebar-new {
-    width: 100px !important;
-    height: 100%;
-    left: 0px;
-}
-.whitelink {
-    color: white !important;
-}
-
-.corprincipal{
-    color: #512DA8 !important;
 }
 .msglogin{
     text-align: center !important;
@@ -356,14 +360,14 @@ div.parentElement{
     border: 1px solid #512DA8;
 }
 .apply-acoes{
-    background-color: #512DA8;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: black;
     border: 1px solid #512DA8;
     width: 11em;  height: 3em;
 }
 .apply-acoes:hover{
-    background-color: whitesmoke;
-    color: #512DA8;
+    background-color: #512DA8;
+    color: whitesmoke;
 }
 .uploadfile{
     background-color: #512DA8;
@@ -379,27 +383,17 @@ div.parentElement{
 .borderform{
     border: 1px solid #512DA8;
 }
-
-.vencimento {
+.vencimento { 
     background-color: #641919;
-    background-repeat:no-repeat;
     border: #641919;
-    cursor: default;
-    padding: 10px;
 }
 .envio {
     background-color: #191964;
-    background-repeat:no-repeat;
     border: #191964;
-    cursor:default;
-    padding: 10px;
 }
 .aprovacao {
     background-color: #196419;
-    background-repeat:no-repeat;
     border: #196419;
-    cursor:default;
-    padding: 10px;
 }
 .buttonsubtitle{
     margin-right:5px;
@@ -445,8 +439,7 @@ div.parentElement{
 .panelogin{
     border-radius: 18px 18px 0 0;
     border-color: transparent !important;
-    }
-
+}
 .animation{
     -webkit-animation: fadein 1.8s;
 }
@@ -484,6 +477,23 @@ div.parentElement{
     color: #00b300;
     font-size: 14px;
 }
-.testevsf{
-	color: whitesmoke;
+.ui-widget-overlay {
+    background: whitesmoke !important;
+}
+.ui-dialog-titlebar{
+	display: none;
+}
+.ui-widget-content{
+	background: whitesmoke !important;
+}
+.sizecalendar{
+	font-size: 13px;
+	padding: 0 !important;
+}
+.ui-dialog{
+	border: 1px solid #512DA8;
+	border-radius: 23px;
+}
+.ui-dialog{
+	padding: 0 !important;
 }

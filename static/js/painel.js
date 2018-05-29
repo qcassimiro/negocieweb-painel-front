@@ -47,11 +47,12 @@ $(function() {
                 type: 'GET'
             },
             eventClick: function(event, element) {
-                $("#event-idacao").html('Ação: ' + event.idAcaoMascara);
-                $("#event-tipoenvio").html('Tipo do Envio: ' + event.tipoEnvio);
-                $("#event-status").html('Status: ' + event.statusAcao);
-                $("#event-numclientes").html('Número de Clientes: ' + event.numClientes);
-                $("#event-numpropostas").html('Número de Propostas: ' + event.numPropostas);
+            	$("#event-title").html('<b>Carteira:</b> ' + event.title);
+                $("#event-idacao").html('<b>Ação: </b>' + event.idAcaoMascara);
+                $("#event-tipoenvio").html('<b>Tipo do Envio: </b>' + event.tipoEnvio);
+                $("#event-status").html('<b>Status: </b>' + event.statusAcao);
+                $("#event-numclientes").html('<b>Número de Clientes: </b>' + event.numClientes);
+                $("#event-numpropostas").html('<b>Número de Propostas</b>: ' + event.numPropostas);
                 $("#event-link").html('Detalhes');
                 $("#event-link").attr('href', 'acoes/' + event.idAcaoMascara);
                 $("#event-content").dialog({
@@ -78,7 +79,6 @@ $(function() {
         $('#calendar').fullCalendar('rerenderEvents');
     });
 });
-
 window.onscroll = function() {
 	scrollFunction()
 };

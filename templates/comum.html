@@ -16,16 +16,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css" rel="stylesheet" />
     <!-- jQuery UI CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css" rel="stylesheet" />
-    <!-- MetisMenu CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.css" rel="stylesheet" />
-    <!-- Morris Charts CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.css" rel="stylesheet" />
     <!-- AmCharts CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.12/plugins/export/export.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link th:href="@{/css/painel.css}" rel="stylesheet" />
     <!-- Favicon -->
-	<link th:href="@{'/img/favicon.png'}" rel="icon" />
+    <link th:href="@{'/img/favicon.png'}" rel="icon" />
 </head>
 
 <body>
@@ -47,29 +43,29 @@
                 <li>
                     <form th:action="@{/logout}" method="post">
                         <button type="submit" class="buttonquit">
-    						<i class="fa fa-power-off" style="color: white;"></i>
-						</button>
+                            <i class="fa fa-power-off" style="color: white;"></i>
+                        </button>
                     </form>
                 </li>
             </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu" style="text-align: center">
-						<li>
-						    <a th:href="@{/}"><i class="fa fa-folder fa-fw fa-2x"></i> Resultados</a>
-						</li>
-						<li>
-						    <a th:href="@{/resdia}"><i class="fa fa-folder fa-fw fa-2x"></i> Resultados Diários</a>
-						</li>
-						<li>
-						    <a th:href="@{/acoes}"><i class="fa fa-folder fa-fw fa-2x"></i> Ações</a>
-						</li>
-						<li>
-						    <a th:href="@{/calendario}"><i class="fa fa-calendar fa-fw fa-2x"></i> Calendário</a>
-						</li>
-						<li>
-						    <a th:href="@{/envio}"><i class="fa fa-upload fa-fw fa-2x"></i> Upload</a>
-						</li>
+                        <li>
+                            <a th:href="@{/}"><i class="fa fa-folder fa-fw fa-2x"></i> Resultados</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/resdia}"><i class="fa fa-folder fa-fw fa-2x"></i> Resultados Diários</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/acoes}"><i class="fa fa-folder fa-fw fa-2x"></i> Ações</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/calendario}"><i class="fa fa-calendar fa-fw fa-2x"></i> Calendário</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/envio}"><i class="fa fa-upload fa-fw fa-2x"></i> Upload</a>
+                        </li>
                     </ul>
                 </div>
             </div>

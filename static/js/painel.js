@@ -55,13 +55,13 @@ $(function() {
             defaultView: window.mobilecheck() ? "basicDay" : "month",
             eventClick: function(event, element) {
                 $("#event-title").html('<b>Carteira:</b> ' + event.title);
-                $("#event-idacao").html('<b>Ação: </b>' + event.idAcaoMascara);
-                $("#event-tipoenvio").html('<b>Tipo do Envio: </b>' + event.tipoEnvio);
-                $("#event-status").html('<b>Status: </b>' + event.statusAcao);
-                $("#event-numclientes").html('<b>Número de Clientes: </b>' + event.numClientes);
-                $("#event-numpropostas").html('<b>Número de Propostas</b>: ' + event.numPropostas);
+                $("#event-idacao").html('<b>Ação: </b>' + event.operationId);
+                $("#event-tipoenvio").html('<b>Tipo do Envio: </b>' + event.uploadType);
+                $("#event-status").html('<b>Status: </b>' + event.operationStatus);
+                $("#event-numclientes").html('<b>Número de Clientes: </b>' + event.debtorAmount);
+                $("#event-numpropostas").html('<b>Número de Propostas</b>: ' + event.proposalAmount);
                 $("#event-link").html('Detalhes');
-                $("#event-link").attr('href', 'acoes/' + event.idAcaoMascara);
+                $("#event-link").attr('href', 'acoes/' + event.operationId);
                 $("#event-content").dialog({
                     title: event.title,
                     modal: true,

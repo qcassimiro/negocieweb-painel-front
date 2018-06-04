@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="comum :: head (title=@{'Ação ' + ${idAcaoMascara}})">
+<head th:include="comum :: head (title=@{'Ação ' + ${operationId}})">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,23 +25,23 @@
                                 <i class="fa fa-folder"></i>&nbsp;&nbsp;<a th:href="@{/acoes}">Ações</a>
                             </li>
                             <li>
-                                <i class="fa fa-file"></i>&nbsp;&nbsp; <a th:href="@{'/acoes/' + ${idAcaoMascara}}" th:text="${idAcaoMascara}"></a>
+                                <i class="fa fa-file"></i>&nbsp;&nbsp; <a th:href="@{'/acoes/' + ${operationId}}" th:text="${operationId}"></a>
                             </li>
                         </ol>
                     </div>
                 </div>
-                <div class="row" th:each="acao : ${detalhes}">
+                <div class="row" th:if="operation">
                     <div class="col-lg-12">
                         <div class="panel panel-default container-fluid">
                             <div class="panel-heading row heading-font rounded-heading">
                                 <div class="col-xs-4">
-                                    <a class="data-font" th:href="@{'/acoes/' + ${acao.idAcaoMascara}}" th:text="@{'Lote ' + ${acao.idAcaoMascara}}"></a>
+                                    <a class="data-font" th:href="@{'/acoes/' + ${operation.id}}" th:text="@{'Lote ' + ${operation.id}}"></a>
                                 </div>
                                 <div class="col-xs-4 text-center">
-                                    <span th:text="${acao.carteira}"></span>
+                                    <span th:text="${operation.portfolioName}"></span>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <img th:src="@{'/' + ${acao.icone}}" height="24" />
+                                    <img th:src="@{'/' + ${operation.icon}}" height="24" />
                                 </div>
                             </div>
                             <div class="panel-body text-center">
@@ -49,36 +49,36 @@
                                     <div class="col-md-2 col-md-offset-0 rounded-box">
                                         <span>Número de Clientes</span>
                                         <br />
-                                        <span class="data-font" th:text="${#numbers.formatDecimal(acao.numClientes, 0, 'POINT', 0, 'COMMA')}"></span>
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(operation.debtorAmount, 0, 'POINT', 0, 'COMMA')}"></span>
                                     </div>
                                     <div class="col-md-2 col-md-offset-0 rounded-box">
                                         <span>Número de Propostas</span>
                                         <br />
-                                        <span class="data-font" th:text="${#numbers.formatDecimal(acao.numPropostas, 0, 'POINT', 0, 'COMMA')}"></span>
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(operation.proposalAmount, 0, 'POINT', 0, 'COMMA')}"></span>
                                     </div>
                                     <div class="col-md-2 col-md-offset-0 rounded-box">
                                         <span>Valor Financeiro</span>
                                         <br />
-                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(acao.valorFinanceiro, 0, 'POINT', 2, 'COMMA')}}"></span>
+                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(operation.financialValue, 0, 'POINT', 2, 'COMMA')}}"></span>
                                     </div>
                                     <div class="col-md-2 col-md-offset-0 rounded-box">
                                         <span>Ticket Médio</span>
                                         <br />
-                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(acao.ticketMedio, 0, 'POINT', 2, 'COMMA')}}"></span>
+                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(operation.lifetimeValue, 0, 'POINT', 2, 'COMMA')}}"></span>
                                     </div>
                                     <div class="col-md-2 col-md-offset-2 rounded-box">
-                                        <span class=" data-font" th:text="${acao.statusAcao}"></span>
+                                        <span class=" data-font" th:text="${operation.status}"></span>
                                     </div>
                                 </div>
                                 <div class="row align-items-center">
                                     <div class="col-md-1 col-md-offset-0 rounded-box" title="Data de Envio">
-                                        <span class="fa fa-calendar-plus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtEnvio} == null ? '--/--' : ${#dates.format(acao.dtEnvio, 'dd/MM')}"></span>
+                                        <span class="fa fa-calendar-plus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${operation.uploadDate} == null ? '--/--' : ${#dates.format(operation.uploadDate, 'dd/MM')}"></span>
                                     </div>
                                     <div class="col-md-1 col-md-offset-0 rounded-box" title="Data de Aprovação">
-                                        <span class="fa fa-calendar-check-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtAprovacao} == null ? '--/--' : ${#dates.format(acao.dtAprovacao, 'dd/MM')}"></span>
+                                        <span class="fa fa-calendar-check-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${operation.approvalDate} == null ? '--/--' : ${#dates.format(operation.approvalDate, 'dd/MM')}"></span>
                                     </div>
                                     <div class="col-md-1 col-md-offset-0 rounded-box" title="Data de Vencimento">
-                                        <span class="fa fa-calendar-minus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${acao.dtValidade} == null ? '--/--' : ${#dates.format(acao.dtValidade, 'dd/MM')}"></span>
+                                        <span class="fa fa-calendar-minus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${operation.expiryDate} == null ? '--/--' : ${#dates.format(operation.expiryDate, 'dd/MM')}"></span>
                                     </div>
                                     <form method="get">
                                         <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg" style="color: #cc8800" title="Email"></button>
@@ -86,7 +86,7 @@
                                     <form method="get">
                                         <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg" style="color: #0039e6" title="SMS"></button>
                                     </form>
-                                    <form th:action="@{'/acoes/' + ${acao.idAcaoMascara}}" method="get">
+                                    <form th:action="@{'/acoes/' + ${operation.id}}" method="get">
                                         <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-info-circle fa-lg" title="Detalhes"></button>
                                     </form>
                                     <form method="get">
@@ -127,11 +127,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="prosposta : ${propostas}">
-                                            <td th:text="${prosposta.numParcelas}"></td>
-                                            <td th:text="${#numbers.formatInteger(prosposta.numClientes, 0, 'POINT')}"></td>
-                                            <td th:text="${#numbers.formatDecimal(prosposta.valorEntrada, 0, 'POINT', 2, 'COMMA')}"></td>
-                                            <td th:text="${#numbers.formatDecimal(prosposta.ticketMedio, 0, 'POINT', 2, 'COMMA')}"></td>
+                                        <tr th:each="proposal : ${operation.proposals}">
+                                            <td th:text="${proposal.installmentAmount}"></td>
+                                            <td th:text="${#numbers.formatInteger(proposal.debtorAmount, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatDecimal(proposal.downPayment, 0, 'POINT', 2, 'COMMA')}"></td>
+                                            <td th:text="${#numbers.formatDecimal(proposal.lifetimeValue, 0, 'POINT', 2, 'COMMA')}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -152,9 +152,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="cadastro : ${cadastros}">
-                                            <td th:text="${cadastro.segmento}"></td>
-                                            <td th:text="${#numbers.formatInteger(cadastro.numClientes, 0, 'POINT')}"></td>
+                                        <tr th:each="register : ${operation.registers}">
+                                            <td th:text="${register.group}"></td>
+                                            <td th:text="${#numbers.formatInteger(register.debtorAmount, 0, 'POINT')}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -174,8 +174,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="arquivo : ${arquivos}">
-                                            <td th:text="${arquivo.nome}"></td>
+                                        <tr th:each="file : ${operation.files}">
+                                            <td th:text="${file.name}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -201,32 +201,32 @@
                 "dataProvider" : [
                     {
                         "title" : "Acessos",
-                        "value" : /*[[${resultado.numAcessos}]]*/
+                        "value" : /*[[${operation.result.accessAmount}]]*/
                         
                     },
                     {
                         "title" : "Propostas Visualizadas",
-                        "value" : /*[[${resultado.numVisualProp}]]*/
+                        "value" : /*[[${operation.result.visualizedProposalAmount}]]*/
                     },
                     {
                         "title" : "Propostas Aceitas",
-                        "value" : /*[[${resultado.numAceiteProp}]]*/
+                        "value" : /*[[${operation.result.acceptedProposalAmount}]]*/
                     },
                     {
                         "title" : "Contrapropostas",
-                        "value" : /*[[${resultado.numContraProp}]]*/
+                        "value" : /*[[${operation.result.counterProposalAmount}]]*/
                     },
                     {
                         "title" : "Boletos Gerados",
-                        "value" : /*[[${resultado.numBoletosGerados}]]*/
+                        "value" : /*[[${operation.result.generatedTicketAmount}]]*/
                     },
                     {
                         "title" : "Pagamentos",
-                        "value" : /*[[${resultado.numPagamentos}]]*/
+                        "value" : /*[[${operation.result.paymentAmount}]]*/
                     },
                     {
                         "title" : "Atualizações Cadastrais",
-                        "value" : /*[[${resultado.numAtCadastro}]]*/
+                        "value" : /*[[${operation.result.registerUpdateAmount}]]*/
 
                     }
                 ],

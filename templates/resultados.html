@@ -56,7 +56,7 @@
                                             <option th:value="${'0'}" th:text="${'TODAS'}"></option>
                                             <option th:each="carteira : ${carteiras}" th:value="${carteira.idCarteira}" th:text="${carteira.nomeAmigavel}" th:selected="${carteira.idCarteira} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>
                                         </select>
-                                        <div style="list-style-type: none" align="right"><button class="apply-acoes rounded-box" type="submit">Aplicar</button></div>
+                                        <div id="button-apply" style="list-style-type: none;"><button class="apply-acoes rounded-box" type="submit">Aplicar</button></div>
                                     </div>
                                 </fieldset>
                             </form>
@@ -80,19 +80,19 @@
                         <div class="panel panel-default">
                             <div class="panel-heading heading-font rounded-heading text-center">Resultados</div>
                             <div class="panel-body">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover table-responsive" id="resultados_table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center" rowspan="2">Ação</th>
-                                            <th class="text-center" rowspan="2">Carteira</th>
-                                            <th class="text-center" rowspan="2">Status</th>
-                                            <th class="text-center" colspan="3">Datas</th>
-                                            <th class="text-right" rowspan="2">Acessos</th>
-                                            <th class="text-right" rowspan="2">Prop. Vis.</th>
-                                            <th class="text-right" rowspan="2">Prop. Act.</th>
-                                            <th class="text-right" rowspan="2">Contrapropostas</th>
-                                            <th class="text-right" rowspan="2">Boletos</th>
-                                            <th class="text-right" rowspan="2">Pagamentos</th>
+                                            <th rowspan="2">Ação</th>
+                                            <th rowspan="2">Carteira</th>
+                                            <th rowspan="2">Status</th>
+                                            <th colspan="3">Datas</th>
+                                            <th rowspan="2">Acessos</th>
+                                            <th rowspan="2">Prop. Vis.</th>
+                                            <th rowspan="2">Prop. Act.</th>
+                                            <th rowspan="2">Contrapropostas</th>
+                                            <th rowspan="2">Boletos</th>
+                                            <th rowspan="2">Pagamentos</th>
                                         </tr>
                                         <tr>
                                             <th class="text-center" >Envio</th>
@@ -103,18 +103,18 @@
                                     <tbody>
                                         <tr th:each="resultado : ${resultados}">
                                             <!-- <td class="text-center" th:text="${resultado.idAcaoMascara}"></td> -->
-                                            <td class="text-center"><a th:href="@{'/acoes/' + ${resultado.idAcaoMascara}}" th:text="${resultado.idAcaoMascara}"></a></td>
-                                            <td class="text-center" th:text="${resultado.carteira}"></td>
-                                            <td class="text-center" th:text="${resultado.statusAcao}"></td>
-                                            <td class="text-center" th:text="${resultado.dtEnvio} == null ? '--/--' : ${#dates.format(resultado.dtEnvio, 'dd/MM')}"></td>
-                                            <td class="text-center" th:text="${resultado.dtAprovacao} == null ? '--/--' : ${#dates.format(resultado.dtAprovacao, 'dd/MM')}"></td>
-                                            <td class="text-center" th:text="${resultado.dtValidade} == null ? '--/--' : ${#dates.format(resultado.dtValidade, 'dd/MM')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAcessos, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numVisualProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAceiteProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numContraProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numBoletosGerados, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numPagamentos, 0, 'POINT')}"></td>
+                                            <td><a th:href="@{'/acoes/' + ${resultado.idAcaoMascara}}" th:text="${resultado.idAcaoMascara}"></a></td>
+                                            <td th:text="${resultado.carteira}"></td>
+                                            <td th:text="${resultado.statusAcao}"></td>
+                                            <td th:text="${resultado.dtEnvio} == null ? '--/--' : ${#dates.format(resultado.dtEnvio, 'dd/MM')}"></td>
+                                            <td th:text="${resultado.dtAprovacao} == null ? '--/--' : ${#dates.format(resultado.dtAprovacao, 'dd/MM')}"></td>
+                                            <td th:text="${resultado.dtValidade} == null ? '--/--' : ${#dates.format(resultado.dtValidade, 'dd/MM')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numAcessos, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numVisualProp, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numAceiteProp, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numContraProp, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numBoletosGerados, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numPagamentos, 0, 'POINT')}"></td>
                                         </tr>	
                                     </tbody>
                                 </table>   
@@ -135,6 +135,7 @@
         var chart = AmCharts.makeChart(
             "chartdiv",
             {
+            	"columnSpacing": 0,
                 "type" : "funnel",
                 "theme" : "none",
                 "dataProvider" : [

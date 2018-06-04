@@ -28,7 +28,7 @@
                         <div class="panel panel-default container-fluid panelcustom">
                             <form th:action="@{/resdia}" method="get" id="filter">
                                 <fieldset th:with="today = ${#calendars.createToday()}">
-                                    <div class="form-inline" align="left">
+                                    <div class="form-inline">
                                         <div class="form-group fontsizedg">
                                             <span>Data de Geração:</span>
                                         </div>
@@ -39,7 +39,7 @@
                                             <input class="form-group textbox-n form-control borderform" type="date" name="def" id="def" th:value="${#httpServletRequest.getParameter('def')} ? ${#httpServletRequest.getParameter('def')} : ${#calendars.format(#calendars.create(#calendars.year(today), #calendars.month(today), #calendars.day(today) + 1), 'yyyy-MM-dd')}" />
                                         </div>
                                         <div class="form-group buttondiv">
-                                            <button class=" form-group apply-acoes rounded-box" type="submit">Aplicar</button>
+                                            <button class="form-group apply-acoes rounded-box" type="submit">Aplicar</button>
                                         </div>
                                     </div>
                                 </fieldset>
@@ -52,7 +52,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading heading-font rounded-heading text-center">Acumulado</div>
                             <div class="panel-body">
-                                <div id="chartdiv"></div>
+                                <div id="chartdiv" style="margin-right: 0;"></div>
                             </div>
                         </div>
                     </div>
@@ -64,27 +64,27 @@
                                 Resultados
                             </div>
                             <div class="panel-body">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover table-responsive" id="resultados_diarios_table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Data</th>
-                                            <th class="text-right">Acessos</th>
-                                            <th class="text-right">Prop. Visualizadas</th>
-                                            <th class="text-right">Prop. Aceitas</th>
-                                            <th class="text-right">Boletos</th>
-                                            <th class="text-right">Contrapropostas</th>
-                                            <th class="text-right">At. Cadastrais</th>
+                                            <th>Data</th>
+                                            <th>Acessos</th>
+                                            <th>Prop. Visualizadas</th>
+                                            <th>Prop. Aceitas</th>
+                                            <th>Boletos</th>
+                                            <th>Contrapropostas</th>
+                                            <th>At. Cadastrais</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr th:each="resultado : ${resultados}">
-                                            <td class="text-center" th:text="${resultado.dtBase} == null ? '--/--' : ${#dates.format(resultado.dtBase, 'dd/MM')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAcessos, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numVisualProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAceiteProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numBoletosGerados, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numContraProp, 0, 'POINT')}"></td>
-                                            <td class="text-right" th:text="${#numbers.formatInteger(resultado.numAtCadastro, 0, 'POINT')}"></td>
+                                            <td th:text="${resultado.dtBase} == null ? '--/--' : ${#dates.format(resultado.dtBase, 'dd/MM')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numAcessos, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numVisualProp, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numAceiteProp, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numBoletosGerados, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numContraProp, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(resultado.numAtCadastro, 0, 'POINT')}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -175,7 +175,8 @@
                               },
                           ],
                 "legend": {
-                              "position": "left"
+                              "position": "left",
+                              "enabled": window.mobilecheck() ? false : true
                           },
                 "startDuration" : 0.1,
                 "startEffect" : "easeInSine",

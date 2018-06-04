@@ -1,5 +1,5 @@
 /*! * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2) * Copyright 2013-2016 Start Bootstrap * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE) */
- body {
+ body {/*Painel*/
     background-color: #f8f8f8;
 }
  td {
@@ -57,32 +57,27 @@ div.parentElement{
     color: rgba(50, 50, 50, 0.5);
 }
 /*IDs */
- #wrapper {
+ #wrapper {/*Comum*/
     width: 100%;
 }
  #page-wrapper {
-    padding: 0 15px;
-    min-height: 568px;
+    padding: 0 1em;
+    min-height: 35.5em;
     background-color: white;
     background-image: url("../img/negocieweb-background.png");
 }
-#chartdiv {
+#chartdiv {/*Gráficos*/
     widht: 100%;
-    margin-left: 100px;
-    margin-right: 100px;
-    height: 250px;
+    margin-left: 11em;
+    height: 15.625em;
 }
-#chartresultados {
-    widht: 100%;
-    height: 250px;
-}
-#btn-top {
+#btn-top {/*Comum*/
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: 2em;
+    right: 2em;
     z-index: 99;
-    font-size: 9px;
+    font-size: 0.8em;
     border: none;
     outline: none;
     background-color: #512DA8;
@@ -96,15 +91,15 @@ div.parentElement{
     background-color: whitesmoke;
     color: #512DA8;
 }
-#event-content{
+#event-content{/*Calendário*/
 	padding: 0 !important;
 }
 #detalhes a{
 	display: inline-block;
-	font-size: 12px;
+	font-size: 0.75em;
 }
 #tablemodal{
-	margin-top:20px;
+	margin-top:1.5em;
 }
 #tablemodal td{
 	padding: 0 !important;
@@ -112,37 +107,37 @@ div.parentElement{
 }
 #tablemodal td p{
 	color: #4d4d4d !important;
-	font-size: 12px;
+	font-size: 0.75em;
 }
 #calendar{
-    margin: 10px;
-    padding: 16px;
+    margin: 1em;;
+    padding: 1em;;
     border-radius: 16px;
     background-color: rgba(255, 255, 255, 0.64);;
 }
-#side-menu a{
+#side-menu a{/*Comum*/
 	color:#512DA8 !important
 }
-#subtitle button{
+#subtitle button{/*Calendário*/
 	background-repeat:no-repeat;
 	cursor: default; 
-	padding: 10px;
+	padding: 0.6em;;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) {/*Comum*/
     #page-wrapper {
       position: inherit;
-      margin: 0 0 0 100px;
-      padding: 0 30px;
+      margin: 0 0 0 7em;
+      padding: 0 2em;
       border-left: 1px solid #e7e7e7;
     }
 }
 /*Animations */
-@media (min-width: 768px) {
+@media (min-width: 768px) {/*Comum*/
     .sidebar {
       z-index: 1;
       position: absolute;
-      width: 100px;
-      margin-top: 51px;
+      width: 7em;
+      margin-top: 3.65em;
       text-align: left;
 	}
     .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
@@ -152,6 +147,18 @@ div.parentElement{
 @media only screen and (max-width: 770px) {
     #side-menu {
         text-align: left !important;
+    }
+}
+@media only screen and (max-width: 1024px) {
+   #chartdiv{
+    margin-right: 1em;
+    margin-left: 0;
+    }
+}
+@media only screen and (max-width: 770px) {
+   #chartdiv{
+    margin-right: 2.5em;
+    margin-left: 0;
     }
 }
 @-webkit-keyframes fadein {
@@ -171,42 +178,19 @@ div.parentElement{
     display: inline-block;
 }
  .navbar-top-links li:last-child {
-    margin-right: 15px;
+    margin-right: 1em;
 }
  .navbar-top-links li a {
-    padding: 15px;
-    min-height: 50px;
+    padding: 1em;
+    min-height: 3em;
 }
- .navbar-top-links .dropdown-menu li {
-    display: block;
+.navbar-toggle{
+	border: none;
+	color: #512DA8;
+	padding: 0;
+	margin-left: 15px;
 }
- .navbar-top-links .dropdown-menu li:last-child {
-    margin-right: 0;
-}
- .navbar-top-links .dropdown-menu li a {
-    padding: 3px 20px;
-    min-height: 0;
-}
- .navbar-top-links .dropdown-menu li a div {
-    white-space: normal;
-}
- .navbar-top-links .dropdown-messages, .navbar-top-links .dropdown-tasks, .navbar-top-links .dropdown-alerts {
-    width: 310px;
-    min-width: 0;
-}
- .navbar-top-links .dropdown-messages {
-    margin-left: 5px;
-}
- .navbar-top-links .dropdown-tasks {
-    margin-left: -59px;
-}
- .navbar-top-links .dropdown-alerts {
-    margin-left: -123px;
-}
- .navbar-top-links .dropdown-user {
-    right: 0;
-    left: auto;
-}
+
  .sidebar .sidebar-nav.navbar-collapse {
     padding-left: 0;
     padding-right: 0;
@@ -229,90 +213,16 @@ div.parentElement{
  .sidebar .nav-second-level li, .sidebar .nav-third-level li {
     border-bottom: none !important;
 }
- .sidebar .nav-second-level li a {
-    padding-left: 37px;
-}
- .sidebar .nav-third-level li a {
-    padding-left: 52px;
-}
- .btn-outline {
-    color: inherit;
-    background-color: transparent;
-    transition: all .5s;
-}
- .btn-primary.btn-outline {
-    color: #428bca;
-}
- .btn-success.btn-outline {
-    color: #5cb85c;
-}
- .btn-info.btn-outline {
-    color: #5bc0de;
-}
- .btn-warning.btn-outline {
-    color: #f0ad4e;
-}
- .btn-danger.btn-outline {
-    color: #d9534f;
-}
- .btn-primary.btn-outline:hover, .btn-success.btn-outline:hover, .btn-info.btn-outline:hover, .btn-warning.btn-outline:hover, .btn-danger.btn-outline:hover {
+.btn-primary.btn-outline:hover, .btn-success.btn-outline:hover, .btn-info.btn-outline:hover, .btn-warning.btn-outline:hover, .btn-danger.btn-outline:hover {
     color: white;
 }
- .panel .slidedown .glyphicon, .chat .glyphicon {
-    margin-right: 5px;
-}
- .login-panel {
+.login-panel {
     margin-top: 25%;
 }
- .flot-chart {
-    display: block;
-    height: 400px;
-}
- .flot-chart-content {
-    width: 100%;
-    height: 100%;
-}
-.btn-circle {
-    width: 30px;
-    height: 30px;
-    padding: 6px 0;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.428571429;
-}
- .btn-circle.btn-lg {
-    width: 50px;
-    height: 50px;
-    padding: 10px 16px;
-    border-radius: 25px;
-    font-size: 18px;
-    line-height: 1.33;
-}
- .btn-circle.btn-xl {
-    width: 70px;
-    height: 70px;
-    padding: 10px 16px;
-    border-radius: 35px;
-    font-size: 24px;
-    line-height: 1.33;
-}
- .show-grid [class^="col-"] {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid #ddd;
-    background-color: #eee !important;
-}
- .show-grid {
-    margin: 15px 0;
-}
- .huge {
-    font-size: 40px;
-}
- .panel-body {
+.panel-body {
     font-size: 1em;
 }
- .row {
+.row {
     font-size: 90%;
 }
 .rounded-box {
@@ -349,13 +259,13 @@ div.parentElement{
     background: white;
     box-shadow: 0px 1px 6px 0px rgba(68,68,68,0.1)
 }
-.msglogin{
+.msglogin{/*Login*/
     text-align: center !important;
     color: #F19748 !important;
 }
-.apply-button{
+.apply-button{/*Comum*/
     background-color: #512DA8;
-    margin-right: 3px;
+    margin-right: 0.4em;
     color: whitesmoke;
     border: 1px solid #512DA8;
 }
@@ -369,21 +279,16 @@ div.parentElement{
     background-color: #512DA8;
     color: whitesmoke;
 }
-.uploadfile{
+.uploadfile{/*Upload*/
     background-color: #512DA8;
     color: whitesmoke;
     border: 1px solid #512DA8;
     width: 8em;  height: 2.5em;
 }
-.removefilterbutton{
-    background-color:#512DA8;
-    color: whitesmoke;
+.borderform{/*Comum*/
     border: 1px solid #512DA8;
 }
-.borderform{
-    border: 1px solid #512DA8;
-}
-.vencimento { 
+.vencimento { /*Calendário*/
     background-color: #641919;
     border: #641919;
 }
@@ -396,51 +301,45 @@ div.parentElement{
     border: #196419;
 }
 .buttonsubtitle{
-    margin-right:5px;
+    margin-right:0.4em;
     float:left;
-    font-size:16px;
+    font-size:1.3em;
 }
-.datestyle{
-    margin-right: 5px; 
-    padding: 5px;
-}
-.paddingbottom5{
+.paddingbottom5{/*?????*/
     padding-bottom: 5px;
 }
 .margintop20{
     margin-top: 20px;
 }
-.panelcustom{
-    padding-bottom: 20px; 
-    padding-top: 20px
+.panelcustom{/*Comum*/
+    padding-bottom: 1.25em;
+    padding-top: 1.25em;
 }
-.calendarform{
-    margin-right: 5px; 
-    padding: 5px; 
-    margin-top: 7px; 
-    font-size: 16px;
+.calendarform{/*Calendário*/ 
+    font-size: 1.3em;
 }
 .textsubtitle{
-    margin-top:11px;
+    margin-top:0.8em;
+    padding-left: 0;
 }
-.fontsizedg{
-    font-size: 16px;
+.fontsizedg{/*Upload*/
+    font-size: 1.3em;
 }
-.buttondiv{
+.buttondiv{/*?????*/
      padding-bottom: 8px;
 }
-.paddingtop{
+.paddingtop{/*?????*/
     padding-top: 10px;
 }
-.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {/*Comum*/
     background-color: #512DA8 !important;
     border: 1px solid #512DA8;
 }
-.panelogin{
+.panelogin{/*Login*/
     border-radius: 18px 18px 0 0;
     border-color: transparent !important;
 }
-.animation{
+.animation{/*Comum*/
     -webkit-animation: fadein 1.8s;
 }
 .buttonquit{
@@ -448,7 +347,10 @@ div.parentElement{
     border:none; 
     border-radius:9px;
 }
-.displayinline{
+.form-inline{
+	margin: 0 auto;
+}
+.displayinline{/*Upload*/
     display: inline !important;
 }
 .clearbutton{
@@ -465,7 +367,7 @@ div.parentElement{
     background-color: #512DA8;
     border-radius: 23px;
     color: #fff;
-    padding: 7px 20px;
+    padding: 0.6em 1.5em;
     border:1px solid #512DA8;
 }
 .input-wrapper label:hover {
@@ -473,11 +375,7 @@ div.parentElement{
     color: black;
     border:1px solid #512DA8;
 }
-.uploadsuccess{
-    color: #00b300;
-    font-size: 14px;
-}
-.ui-widget-overlay {
+.ui-widget-overlay {/*Calendário*/
     background: whitesmoke !important;
 }
 .ui-dialog-titlebar{
@@ -486,14 +384,105 @@ div.parentElement{
 .ui-widget-content{
 	background: whitesmoke !important;
 }
-.sizecalendar{
-	font-size: 13px;
-	padding: 0 !important;
-}
 .ui-dialog{
 	border: 1px solid #512DA8;
 	border-radius: 23px;
-}
-.ui-dialog{
 	padding: 0 !important;
+}
+.datestyle{/*Comum*/
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+}
+table th, td{
+	text-align: center;
+}
+#table_cadastros th{
+	text-align: left;
+}#table_cadastros td{
+	text-align: left;
+}
+#button-apply{
+	float: none;
+}
+#button-quit{
+	float: right;
+	padding-top: 0.8em;
+	padding-right: 0.3em;	
+}
+.flexbutton{display: inline;}
+
+.flextext{display: inherit;}
+
+.space{display: inline;}
+
+#event-content{display: none;}
+
+@media /*Teste*/
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+	
+	.fc-event-container{padding-bottom: 5px !important;}
+	
+	#tablefiles{font-size: 6px;}
+	
+	.buttondiv {display: flex;align-items: center;justify-content: center;}
+	
+	 .flexbutton{display: flex;align-items: center;justify-content: center;}
+	 
+	 .flextext{display: flex;align-items: center;justify-content: center;}
+	 
+	.space{margin-top: 1em; display: inherit;}
+	
+	.input-wrapper{display:inherit !important; text-align: center;}
+		
+	#subtitle .col-sm-2{display: inline;}
+	
+	.textsubtitle{ margin-top: 0;}
+		
+	.form-inline{float: none;}
+	
+	#button-apply{float: none;}	
+	
+	.navbar-brand{float:none;}
+	
+	table.table-responsive td { display: block; }
+	
+	.table-responsive thead tr { position: absolute; top: -9999px; left: -9999px;}
+	
+	tr { border: 1px solid #ccc; }
+	
+	.table-responsive td {border: none;border-bottom: 1px solid #eee; position: relative;padding-left: 50%; text-align: right;}
+	
+	td:before { position: absolute;top: 6px;left: 6px;white-space: nowrap;font-weight: bold;}	
+	
+	/* Resultados Diários */	
+	#resultados_diarios_table td:nth-of-type(1):before { content: "Data:";}
+	#resultados_diarios_table td:nth-of-type(2):before { content: "Acessos:"; }
+	#resultados_diarios_table td:nth-of-type(3):before { content: "Prop. Visualizadas:"; }
+	#resultados_diarios_table td:nth-of-type(4):before { content: "Prop. Aceitas:"; }
+	#resultados_diarios_table td:nth-of-type(5):before { content: "Boletos:"; }
+	#resultados_diarios_table td:nth-of-type(6):before { content: "Contrapropostas:"; }
+	#resultados_diarios_table td:nth-of-type(7):before { content: "At. Cadastrais:"; }
+	#resultados_diarios_table td:nth-of-type(7){margin-bottom: 4em;}
+	/* Ação -> Propostas */
+	#propostas_table td:nth-of-type(1):before { content: "Numero de Parcelas:";}
+	#propostas_table td:nth-of-type(2):before { content: "Numero de Clientes:"; }
+	#propostas_table td:nth-of-type(3):before { content: "Valor de entrada:"; }
+	#propostas_table td:nth-of-type(4):before { content: "Ticket Medio:"; }
+	/* Resultados */
+	#resultados_table td:nth-of-type(1):before { content: "Acao:";}
+	#resultados_table td:nth-of-type(2):before { content: "Carteira:"; }
+	#resultados_table td:nth-of-type(3):before { content: "Status:"; }
+	#resultados_table td:nth-of-type(4):before { content: "Envio:"; }
+	#resultados_table td:nth-of-type(5):before { content: "Aprovacao:"; }
+	#resultados_table td:nth-of-type(6):before { content: "Validade:"; }
+	#resultados_table td:nth-of-type(7):before { content: "Acessos:"; }
+	#resultados_table td:nth-of-type(8):before { content: "Prop. Vis.:"; }
+	#resultados_table td:nth-of-type(9):before { content: "Prop. Act.:"; }
+	#resultados_table td:nth-of-type(10):before { content: "Contrapropostas:"; }
+	#resultados_table td:nth-of-type(11):before { content: "Boletos:"; }
+	#resultados_table td:nth-of-type(12):before { content: "Pagamentos:"; }
+	#resultados_table td:nth-of-type(12){margin-bottom: 6em;}
+	
+	
 }

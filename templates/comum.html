@@ -27,25 +27,19 @@
 <body>
     <div id="container">
         <nav th:fragment="navbar" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                </button>
+            <div class="navbar-header" align="center">
                 <a class="navbar-brand" th:href="@{/}"><img th:src="@{'/img/negocieweb-logo.png'}" height="24" /></a>
             </div>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+             <i class="fa fa-bars fa-2x"></i></button>
+             <form id="button-quit" th:action="@{/logout}" method="post">
+                 <button type="submit" class="buttonquit"><i class="fa fa-power-off" style="color: white;"></i></button></form>
             <ul class="nav navbar-top-links navbar-right paddingtop">
                 <li>
                     <img th:src="@{'/' + ${usuario.icone}}" height="24" />
                 </li>
                 <li>
                     <span th:text="${usuario.login}"></span>
-                </li>
-                <li>
-                    <form th:action="@{/logout}" method="post">
-                        <button type="submit" class="buttonquit">
-                            <i class="fa fa-power-off" style="color: white;"></i>
-                        </button>
-                    </form>
                 </li>
             </ul>
             <div class="navbar-default sidebar" role="navigation">

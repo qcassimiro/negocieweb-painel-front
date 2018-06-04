@@ -64,7 +64,7 @@
                                         <form action="/envio" method="get">
                                             <div class="form-group fontsizedg flextext"><span>Selecione a Carteira:</span></div>
                                             <select class="selectcar borderform form-control" name="car" id="car">
-                                                <option th:each="carteira : ${carteiras}" th:value="${carteira.idCarteira}" th:text="${carteira.nomeAmigavel}" th:selected="${carteira.idCarteira} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>
+                                                <option th:each="portfolio : ${portfolios}" th:value="${portfolio.id}" th:text="${portfolio.name}" th:selected="${portfolio.id} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>
                                             </select>
                                             <input type="hidden" name="acc" value="true"/>
                                             <div class="flexbutton"><input class="form-group uploadfile rounded-box clearbutton" type="submit" value="Confirmar" /></div>

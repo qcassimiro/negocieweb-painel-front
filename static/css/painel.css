@@ -65,7 +65,7 @@ a {color: #512DA8 !important;}
 
 input:focus {outline: none !important;border:1px solid #9373d9 !important;box-shadow: 0 0 10px #719ECE !important;}
 
-input[type='file'], .hidden, .ui-dialog-titlebar {display: none}
+input[type='file'], .hidden, .ui-dialog-titlebar, .td-space-gray {display: none}
 
 select{color: black !important;}
 
@@ -245,7 +245,7 @@ table th, td{text-align: center;}
 	/*Calendário*/
 	.fc-event-container{padding-bottom: 5px !important;}
 			
-	#subtitle .col-sm-2{display: inline;}
+	#subtitle .col-sm-2, .td-space-gray{display: inline;}
 	
 	/*Upload*/
 	#tablefiles{font-size: 0.45em;}
@@ -265,7 +265,7 @@ table th, td{text-align: center;}
 	
 	.buttondiv, .flexbutton, .flextext {display: flex;align-items: center;justify-content: center;}
 		 
-	.space{margin-top: 1em; display: inherit;}
+	.space{margin-bottom: 0.5em; display: inherit;}
 	
 	.form-inline, .navbar-brand, #button-apply{float: none;}
 	

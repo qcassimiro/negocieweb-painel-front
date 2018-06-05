@@ -226,6 +226,10 @@ table th, td{text-align: center;}
 
 .clearbutton:hover{background-color: #512DA8;color: whitesmoke;}
 
+.followbutton{border-radius: 23px;border-color: #512DA8;background-color: #512DA8 ;color: whitesmoke;}
+
+.followbutton:hover{background-color: whitesmoke;color: black;}
+
 .input-wrapper label {background-color: #512DA8;border-radius: 23px;color: #fff;padding: 0.6em 1.5em;border:1px solid #512DA8;}
 
 .input-wrapper label:hover {background-color: whitesmoke;color: black;border:1px solid #512DA8;}
@@ -253,6 +257,8 @@ table th, td{text-align: center;}
 	.input-wrapper{display:inherit !important; text-align: center;}
 
 	.textsubtitle{margin-top: -0.85em;}
+	
+	.followbutton{margin-top: -0.5em;}
 	
 	/*Comum*/
 	tr {border: 1px solid #ccc;}

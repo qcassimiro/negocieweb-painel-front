@@ -151,3 +151,8 @@ function oneSecondFunction() {
         clearbutton.classList.remove("hidden");
     }
 }
+$(document).ready(function () {
+    if(window.location.href.indexOf("acc=true") > -1) {
+    	 $("#follow-button").removeClass("hidden");
+    }
+});

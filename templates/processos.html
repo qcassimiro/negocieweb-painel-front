@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="comum :: head (title='Processos')">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Andre Cassimiro" />
+</head>
+
+<body>
+    <div id="container">
+        <nav th:replace="comum :: navbar"></nav>
+        <div id="page-wrapper">
+            <button onclick="topFunction()" id="btn-top" title="Topo"><i class="fa fa-arrow-up fa-2x"></i></button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ol class="breadcrumb" style="margin-top: 20px;">
+                            <li><i class="fa fa-home"></i><a th:href="@{/}">Início</a></li>
+                            <li><i class="fa fa-folder"></i><a th:href="@{/processos}">Processos</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row" th:each="process : ${processes}">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default container-fluid">
+                            <div class="panel-heading row heading-font rounded-heading">
+                                <div class="col-xs-4">
+                                    <span th:text="@{'Lote ' + ${process.operationId}}"></span>
+                                </div>
+                                <div class="col-xs-4 text-center"><span th:text="${process.portfolioName}"></span></div>
+                                <div class="col-xs-4 text-right"><img th:src="@{'/' + ${process.icon}}" height="24" /></div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 col-md-offset-1 rounded-box">
+                                        <span>Número de Clientes</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(process.operationDebtorAmount, 0, 'POINT', 0, 'COMMA')}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Número de Propostas</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(process.operationProposalAmount, 0, 'POINT', 0, 'COMMA')}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Valor Financeiro</span>
+                                        <br />
+                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(process.operationFinancialValue, 0, 'POINT', 2, 'COMMA')}}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Ticket Médio</span>
+                                        <br />
+                                        <span class="data-font" th:text="@{'R$ ' + ${#numbers.formatDecimal(process.operationLifetimeValue, 0, 'POINT', 2, 'COMMA')}}"></span>
+                                    </div>
+                                    <div class="col-md-2 col-md-offset-0 rounded-box">
+                                        <span>Data de Envio</span>
+                                        <br />
+                                        <span class="fa fa-calendar-plus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${process.uploadDate} == null ? '--/--' : ${#dates.format(process.uploadDate, 'dd/MM')}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:replace="comum :: jqueryjs"></script>
+    <script th:replace="comum :: bootstrapjs"></script>
+	<script th:replace="comum :: customjs"></script>
+    <script th:replace="comum :: reload60s"></script>
+</body>
+
+</html>

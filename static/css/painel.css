@@ -57,15 +57,15 @@ td {font-family: monospace;}
  
 li {list-style-type: none;}
 
+ol li i{margin-right: 0.5em;}
+
 label {display: block;font-weight: 100;}
 
 a {color: #512DA8 !important;}
 
-input{display:inline;}
-
 input:focus {outline: none !important;border:1px solid #9373d9 !important;box-shadow: 0 0 10px #719ECE !important;}
 
-input[type='file'] {display: none}
+input[type='file'], .hidden, .ui-dialog-titlebar {display: none}
 
 select{color: black !important;}
 
@@ -88,8 +88,6 @@ table th, td{text-align: center;}
 #wrapper {width: 100%;}
 
 #btn-top:hover {background-color: whitesmoke;color: #512DA8;}
-
-#side-menu a{color:#512DA8 !important}
 
 @-webkit-keyframes fadein {from { opacity: 0; }to   { opacity: 1; }}
 
@@ -127,7 +125,7 @@ table th, td{text-align: center;}
 
 .row {font-size: 90%;}
 
-.rounded-box {padding: 8px;border-radius: 32px;margin-top: 8px;background-color: whitesmoke;}
+.rounded-box {padding: 0.7em;border-radius: 2em;margin-top: 0.6em;background-color: whitesmoke;}
 
 .rounded-heading {border-radius: 0px 0px 25px 25px;}
 
@@ -139,8 +137,6 @@ table th, td{text-align: center;}
 
 .fc-title{color: whitesmoke !important;}
 
-.hidden {display: none;}
- 
 .newbackground{background: url("../img/negocieweb-background.png");}
 
 .navbarcustom{background: white;box-shadow: 0px 1px 6px 0px rgba(68,68,68,0.1)}
@@ -151,13 +147,13 @@ table th, td{text-align: center;}
 
 .buttondiv{padding-bottom: 0.5em;}
 
-.paddingtop{padding-top: 10px;}
+.paddingtop{padding-top: 0.8em;}
 
 .panelcustom{padding-bottom: 1.25em;padding-top: 1.25em;}
 
-.paddingbottom5{padding-bottom: 5px;}
+.paddingbottom5{padding-bottom: 0.5em;}
 
-.margintop20{margin-top: 20px;}
+.margintop20{margin-top: 1.5em;}
 
 .animation{-webkit-animation: fadein 1.8s;}
 
@@ -167,9 +163,11 @@ table th, td{text-align: center;}
 
 .datestyle{padding-top: 0.4em;padding-bottom: 0.4em;}
 
-.flexbutton, .space {display: inline;}
+.flexbutton, .space, input {display: inline;}
 
 .flextext{display: inherit;}
+
+.breadcrumb{margin-top: 1.5em;}
 
 /*Calendário*/
 #calendar{
@@ -190,21 +188,19 @@ table th, td{text-align: center;}
 
 #subtitle button{background-repeat:no-repeat;cursor: default; padding: 0.6em;}
 
-.vencimento {background-color: #641919;border: #641919;}
+.vencimento {color: #641919;}
 
-.envio {background-color: #191964;border: #191964;}
+.envio {color: #191964;}
 
-.aprovacao {background-color: #196419;border: #196419;}
+.aprovacao {color: #196419;}
 
 .buttonsubtitle{margin-right:0.4em;float:left;font-size:1.3em;}
 
 .calendarform{font-size: 1.3em;}
 
-.textsubtitle{margin-top:0.8em;padding-left: 0;}
+.textsubtitle{margin-top:0.4em;padding-left: 0;}
 
 .ui-widget-overlay {background: whitesmoke !important;}
-
-.ui-dialog-titlebar{display: none;}
 
 .ui-widget-content{background: whitesmoke !important;}
 
@@ -217,7 +213,7 @@ table th, td{text-align: center;}
 
 .apply-acoes:hover{background-color: #512DA8;color: whitesmoke;}
 
-.panelogin{border-radius: 18px 18px 0 0;border-color: transparent !important;}
+.panelogin{border-radius: 1.5em 1.5em 0 0;border-color: transparent !important;}
 
 /*Upload*/
 .uploadfile{background-color: #512DA8;color: whitesmoke;border: 1px solid #512DA8;width: 8em;height: 2.5em;}
@@ -256,7 +252,7 @@ table th, td{text-align: center;}
 	
 	.input-wrapper{display:inherit !important; text-align: center;}
 
-	.textsubtitle{margin-top: 0;}
+	.textsubtitle{margin-top: -0.85em;}
 	
 	/*Comum*/
 	tr {border: 1px solid #ccc;}
@@ -265,21 +261,13 @@ table th, td{text-align: center;}
 	
 	table.table-responsive td {display: block;}
 	
-	#button-apply{float: none;}	
-	
 	#side-menu {text-align: left !important;}
 	
-	.buttondiv {display: flex;align-items: center;justify-content: center;}
-	
-	.flexbutton{display: flex;align-items: center;justify-content: center;}
-	 
-	.flextext{display: flex;align-items: center;justify-content: center;}
-	 
+	.buttondiv, .flexbutton, .flextext {display: flex;align-items: center;justify-content: center;}
+		 
 	.space{margin-top: 1em; display: inherit;}
 	
-	.form-inline{float: none;}
-	
-	.navbar-brand{float:none;}
+	.form-inline, .navbar-brand, #button-apply{float: none;}
 	
 	.table-responsive thead tr {position: absolute;top: -9999px;left: -9999px;}
 	
@@ -292,8 +280,8 @@ table th, td{text-align: center;}
 	#resultados_diarios_table td:nth-of-type(4):before { content: "Prop. Aceitas:"; }
 	#resultados_diarios_table td:nth-of-type(5):before { content: "Boletos:"; }
 	#resultados_diarios_table td:nth-of-type(6):before { content: "Contrapropostas:"; }
-	#resultados_diarios_table td:nth-of-type(7):before { content: "At. Cadastrais:"; }
-	#resultados_diarios_table td:nth-of-type(7){margin-bottom: 4em;}
+	#resultados_diarios_table td:nth-of-type(7):before { content: "At. Cadastrais:"; }	
+	#resultados_diarios_table td:nth-of-type(8){background-color: gray; padding: 1em;}
 	/* Ação -> Propostas */
 	#propostas_table td:nth-of-type(1):before { content: "Numero de Parcelas:";}
 	#propostas_table td:nth-of-type(2):before { content: "Numero de Clientes:"; }
@@ -312,5 +300,5 @@ table th, td{text-align: center;}
 	#resultados_table td:nth-of-type(10):before { content: "Contrapropostas:"; }
 	#resultados_table td:nth-of-type(11):before { content: "Boletos:"; }
 	#resultados_table td:nth-of-type(12):before { content: "Pagamentos:"; }
-	#resultados_table td:nth-of-type(12){margin-bottom: 6em;}	
+	#resultados_table td:nth-of-type(13){background-color: gray; padding: 1em;}
 }

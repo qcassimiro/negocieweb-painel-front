@@ -17,15 +17,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <ol class="breadcrumb" style="margin-top: 20px;">
+                        <ol class="breadcrumb">	
                             <li>
-                                <i class="fa fa-home"></i>&nbsp;&nbsp;<a th:href="@{/}">Início</a>
+                                <i class="fa fa-home"></i><a th:href="@{/}">Início</a>
                             </li>
                             <li>
-                                <i class="fa fa-folder"></i>&nbsp;&nbsp;<a th:href="@{/acoes}">Ações</a>
+                                <i class="fa fa-folder"></i><a th:href="@{/acoes}">Ações</a>
                             </li>
                             <li>
-                                <i class="fa fa-file"></i>&nbsp;&nbsp; <a th:href="@{'/acoes/' + ${operationId}}" th:text="${operationId}"></a>
+                                <i class="fa fa-file"></i><a th:href="@{'/acoes/' + ${operationId}}" th:text="${operationId}"></a>
                             </li>
                         </ol>
                     </div>

@@ -234,6 +234,10 @@ table th, td{text-align: center;}
 
 .input-wrapper label:hover {background-color: whitesmoke;color: black;border:1px solid #512DA8;}
 
+.button-container form,.button-container form div {display: inline;}
+
+.button-container button {display: inline;vertical-align: middle;}
+
 /*Gráficos*/
 #chartdiv {widht: 100%;margin-left: 11em;height: 15.625em;}
 
@@ -277,6 +281,8 @@ table th, td{text-align: center;}
 	
 	.table-responsive thead tr {position: absolute;top: -9999px;left: -9999px;}
 	
+	.table-responsive tr{ border: 1px solid #512DA8}
+	
 	.table-responsive td {border: none;border-bottom: 1px solid #eee; position: relative;padding-left: 50%; text-align: right;}	
 	
 	/* Resultados Diários */	
@@ -287,7 +293,6 @@ table th, td{text-align: center;}
 	#resultados_diarios_table td:nth-of-type(5):before { content: "Boletos:"; }
 	#resultados_diarios_table td:nth-of-type(6):before { content: "Contrapropostas:"; }
 	#resultados_diarios_table td:nth-of-type(7):before { content: "At. Cadastrais:"; }	
-	#resultados_diarios_table td:nth-of-type(8){background-color: gray; padding: 1em;}
 	/* Ação -> Propostas */
 	#propostas_table td:nth-of-type(1):before { content: "Numero de Parcelas:";}
 	#propostas_table td:nth-of-type(2):before { content: "Numero de Clientes:"; }
@@ -306,5 +311,4 @@ table th, td{text-align: center;}
 	#resultados_table td:nth-of-type(10):before { content: "Contrapropostas:"; }
 	#resultados_table td:nth-of-type(11):before { content: "Boletos:"; }
 	#resultados_table td:nth-of-type(12):before { content: "Pagamentos:"; }
-	#resultados_table td:nth-of-type(13){background-color: gray; padding: 1em;}
 }

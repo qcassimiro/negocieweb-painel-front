@@ -28,7 +28,7 @@
                             <div class="panel-body">
                                 <div class="col-sm-6">
                                     <div>
-                                        <form action="/envio" method="post" enctype="multipart/form-data">
+                                        <form th:action="@{/envio}" method="post" enctype="multipart/form-data">
                                             <div class="form-group fontsizedg flextext"><span>Selecione os arquivos:</span></div>
                                             <div class='input-wrapper displayinline'>
                                                 <label class="displayinline" for='input-file'>Selecionar arquivo</label>
@@ -52,7 +52,7 @@
                                         </table>
                                     </div>
                                     <div id="cleardiv" class="hidden">
-                                        <form action="/envio" method="get">
+                                        <form th:action="@{/envio}" method="get">
                                             <input type="hidden" name="del" value="true" />
                                             <div class="flexbutton">
                                             <input id="cancelarenvio" class="form-group uploadfile rounded-box clearbutton"  type="submit" value="Cancelar" /></div>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div>
-                                        <form action="/envio" method="get">
+                                        <form th:action="@{/envio}" method="get">
                                             <div class="form-group fontsizedg flextext"><span>Selecione a Carteira:</span></div>
                                             <select class="selectcar borderform form-control" name="car" id="car">
                                                 <option th:each="portfolio : ${portfolios}" th:value="${portfolio.id}" th:text="${portfolio.name}" th:selected="${portfolio.id} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>

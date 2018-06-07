@@ -115,6 +115,39 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
+                            <div class="panel-heading heading-font rounded-heading text-center">Segmentos</div>
+                            <div class="panel-body">
+                                <table class="table table-striped table-bordered table-hover table-responsive" id="segmentos_table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de Servico</th>
+                                            <th>Acessos</th>
+                                            <th>Propostas Visualizadas</th>
+                                            <th>Contrapropostas</th>
+                                            <th>Propostas Aceitas</th>
+                                            <th>Boletos Gerados</th>
+                                            <th>Atualizações de Cadastro</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="source : ${operation.sources}">
+                                            <td th:text="${source.name}"></td>
+                                            <td th:text="${#numbers.formatInteger(source.accessAmount, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(source.visualizedProposalAmount, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(source.counterProposalAmount, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(source.acceptedProposalAmount, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(source.generatedTicketAmount, 0, 'POINT')}"></td>
+                                            <td th:text="${#numbers.formatInteger(source.registerUpdateAmount, 0, 'POINT')}"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
                             <div class="panel-heading heading-font rounded-heading text-center">Propostas</div>
                             <div class="panel-body">
                                 <table class="table table-striped table-bordered table-hover table-responsive" id="propostas_table">

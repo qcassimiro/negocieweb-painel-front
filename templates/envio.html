@@ -30,6 +30,7 @@
                                     <div>
                                         <form th:action="@{/envio}" method="post" enctype="multipart/form-data">
                                             <div class="form-group fontsizedg flextext"><span>Selecione os arquivos:</span></div>
+                                            <div class="form-inline">
                                             <div class='input-wrapper displayinline'>
                                                 <label class="displayinline" for='input-file'>Selecionar arquivo</label>
                                                 <input id='input-file' type='file' name="file" value='' multiple='multiple'/>
@@ -37,7 +38,8 @@
                                                 <span id='file-name'></span>
                                                 <input id="file-name" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                                             </div>
-                                            <div class="flexbutton"><input class="form-group uploadfile rounded-box clearbutton" type="submit" name="submit" value="Upload" /></div>
+                                            <div class="flexbutton"><input class="form-group uploadfile rounded-box clearbutton confirmbutton" type="submit" name="submit" value="Upload" style="margin-top: 0;"/></div>
+                                        </div>
                                         </form>
                                     </div>
                                     <div>
@@ -62,13 +64,15 @@
                                 <div class="col-sm-6">
                                     <div>
                                         <form th:action="@{/envio}" method="get">
-                                            <div class="form-group fontsizedg flextext"><span>Selecione a Carteira:</span></div>
-                                            <select class="selectcar borderform form-control" name="car" id="car">
-                                                <option th:each="portfolio : ${portfolios}" th:value="${portfolio.id}" th:text="${portfolio.name}" th:selected="${portfolio.id} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>
-                                            </select>
-                                            <input type="hidden" name="acc" value="true"/>
-                                            <div class="flexbutton"><input class="form-group uploadfile rounded-box clearbutton" type="submit" value="Confirmar" />
-                                            <a th:href="@{/processos}"><button class="rounded-box uploadfile followbutton hidden" id="follow-button" type="button">Acompanhar</button></a></div>
+                                            <div class="form-inline">
+                                                <div class="fontsizedg flextext" style="margin-bottom: 15px;"><span>Selecione a Carteira:</span></div>
+                                                <select class="selectcar borderform form-control" name="car" id="car">
+                                                    <option th:each="portfolio : ${portfolios}" th:value="${portfolio.id}" th:text="${portfolio.name}" th:selected="${portfolio.id} == ${#httpServletRequest.getParameter('car')} ? true : false"></option>
+                                                </select>
+                                                <input type="hidden" name="acc" value="true"/>
+                                                <div class="flexbutton form-group"><input class="uploadfile rounded-box clearbutton confirmbutton" type="submit" value="Confirmar" />
+                                                <a th:href="@{/processos}"><input id="follow-button" class="uploadfile rounded-box followbutton confirmbutton hidden" type="button" value="Acompanhar" /></a></div>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

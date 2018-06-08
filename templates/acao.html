@@ -81,19 +81,19 @@
                                         <span class="fa fa-calendar-minus-o"></span>&nbsp;&nbsp;<span class="data-font" th:text="${operation.expiryDate} == null ? '--/--' : ${#dates.format(operation.expiryDate, 'dd/MM')}"></span>
                                     </div>
                                     <form method="get">
-                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg" style="color: #cc8800" title="Email"></button>
+                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-envelope fa-lg" title="Email"></button>
                                     </form>
                                     <form method="get">
-                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg" style="color: #0039e6" title="SMS"></button>
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-paper-plane fa-lg" title="SMS"></button>
                                     </form>
                                     <form th:action="@{'/acoes/' + ${operation.id}}" method="get">
-                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-info-circle fa-lg" title="Detalhes"></button>
+                                        <button class="col-md-1 col-md-offset-2 rounded-box btn btn-secondary fa fa-info-circle fa-lg" style="color: #002080" title="Detalhes"></button>
                                     </form>
                                     <form method="get">
-                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-times-circle fa-lg" title="Cancelar"></button>
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-times-circle fa-lg" style="color: #800000" title="Cancelar"></button>
                                     </form>
                                     <form method="get">
-                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-check-circle fa-lg" title="Aprovar"></button>
+                                        <button class="col-md-1 col-md-offset-0 rounded-box btn btn-secondary fa fa-check-circle fa-lg" style="color: #008000"  title="Aprovar"></button>
                                     </form>
                                 </div>
                             </div>

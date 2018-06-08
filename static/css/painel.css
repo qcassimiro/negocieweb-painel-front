@@ -81,7 +81,7 @@ table th, td{text-align: center;}
 
 #table_cadastros th, td{text-align: left;}
 
-#button-apply{float: none;}
+#button-apply{float: right;}
 
 #button-quit{float: right;padding-top: 0.8em;padding-right: 0.3em;}
 
@@ -169,7 +169,7 @@ table th, td{text-align: center;}
 
 .breadcrumb{margin-top: 1.5em;}
 
-/*Calendário*/
+/*Calendï¿½rio*/
 #calendar{
     margin: 1em;;
     padding: 1em;;
@@ -226,7 +226,9 @@ table th, td{text-align: center;}
 
 .clearbutton:hover{background-color: #512DA8;color: whitesmoke;}
 
-.followbutton{border-radius: 23px;border-color: #512DA8;background-color: #512DA8 ;color: whitesmoke;}
+.confirmbutton{margin: 0 !important;}
+
+.followbutton{border-radius: 23px;border-color: #512DA8;background-color: #512DA8 ;color: whitesmoke; margin-top: 10px;}
 
 .followbutton:hover{background-color: whitesmoke;color: black;}
 
@@ -238,19 +240,19 @@ table th, td{text-align: center;}
 
 .button-container button {display: inline;vertical-align: middle;}
 
-/*Gráficos*/
+/*Grï¿½ficos*/
 #chartdiv {widht: 100%;margin-left: 11em;height: 15.625em;}
 
 /* Responsive */
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 	
-	/*Gráficos*/
+	/*Grï¿½ficos*/
 	#chartdiv{margin-right: 1em; margin-left: 0;}
 	
     #chartdiv{margin-right: 2.5em; margin-left: 0;}
 	
-	/*Calendário*/
+	/*Calendï¿½rio*/
 	.fc-event-container{padding-bottom: 5px !important;}
 			
 	#subtitle .col-sm-2, .td-space-gray{display: inline;}
@@ -263,6 +265,8 @@ table th, td{text-align: center;}
 	.textsubtitle{margin-top: -0.85em;}
 	
 	.followbutton{margin-top: -0.5em;}
+
+	.confirmbutton{margin-top: 5px !important;}
 	
 	/*Comum*/
 	tr {border: 1px solid #ccc;}
@@ -285,7 +289,7 @@ table th, td{text-align: center;}
 	
 	.table-responsive td {border: none;border-bottom: 1px solid #eee; position: relative;padding-left: 50%; text-align: right;}	
 	
-	/* Resultados Diários */	
+	/* Resultados Diï¿½rios */	
 	#resultados_diarios_table td:nth-of-type(1):before { content: "Data:";}
 	#resultados_diarios_table td:nth-of-type(2):before { content: "Acessos:"; }
 	#resultados_diarios_table td:nth-of-type(3):before { content: "Prop. Visualizadas:"; }
@@ -293,7 +297,7 @@ table th, td{text-align: center;}
 	#resultados_diarios_table td:nth-of-type(5):before { content: "Boletos:"; }
 	#resultados_diarios_table td:nth-of-type(6):before { content: "Contrapropostas:"; }
 	#resultados_diarios_table td:nth-of-type(7):before { content: "At. Cadastrais:"; }	
-	/* Ação -> Propostas */
+	/* Aï¿½ï¿½o -> Propostas */
 	#propostas_table td:nth-of-type(1):before { content: "Numero de Parcelas:";}
 	#propostas_table td:nth-of-type(2):before { content: "Numero de Clientes:"; }
 	#propostas_table td:nth-of-type(3):before { content: "Valor de entrada:"; }

@@ -80,44 +80,94 @@
                         <div class="panel panel-default">
                             <div class="panel-heading heading-font rounded-heading text-center">Resultados</div>
                             <div class="panel-body">
-                                <table class="table table-striped table-bordered table-hover table-responsive" id="resultados_table">
-                                    <thead>
-                                        <tr>
-                                            <th rowspan="2">Ação</th>
-                                            <th rowspan="2">Carteira</th>
-                                            <th rowspan="2">Status</th>
-                                            <th colspan="3">Datas</th>
-                                            <th rowspan="2">Acessos</th>
-                                            <th rowspan="2">Prop. Vis.</th>
-                                            <th rowspan="2">Prop. Act.</th>
-                                            <th rowspan="2">Contrapropostas</th>
-                                            <th rowspan="2">Boletos</th>
-                                            <th rowspan="2">Pagamentos</th>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-center" >Envio</th>
-                                            <th class="text-center" >Aprovação</th>
-                                            <th class="text-center" >Validade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr th:each="result : ${results}">
-                                            <!-- <td class="text-center" th:text="${result.operationId}"></td> -->
-                                            <td><a th:href="@{'/acoes/' + ${result.operationId}}" th:text="${result.operationId}"></a></td>
-                                            <td th:text="${result.portfolioName}"></td>
-                                            <td th:text="${result.operationStatus}"></td>
-                                            <td th:text="${result.operationUploadDate} == null ? '--/--' : ${#dates.format(result.operationUploadDate, 'dd/MM')}"></td>
-                                            <td th:text="${result.operationApprovalDate} == null ? '--/--' : ${#dates.format(result.operationApprovalDate, 'dd/MM')}"></td>
-                                            <td th:text="${result.operationExpiryDate} == null ? '--/--' : ${#dates.format(result.operationExpiryDate, 'dd/MM')}"></td>
-                                            <td th:text="${#numbers.formatInteger(result.accessAmount, 0, 'POINT')}"></td>
-                                            <td th:text="${#numbers.formatInteger(result.visualizedProposalAmount, 0, 'POINT')}"></td>
-                                            <td th:text="${#numbers.formatInteger(result.acceptedProposalAmount, 0, 'POINT')}"></td>
-                                            <td th:text="${#numbers.formatInteger(result.counterProposalAmount, 0, 'POINT')}"></td>
-                                            <td th:text="${#numbers.formatInteger(result.generatedTicketAmount, 0, 'POINT')}"></td>
-                                            <td th:text="${#numbers.formatInteger(result.paymentAmount, 0, 'POINT')}"></td>
-                                        </tr>	
-                                    </tbody>
-                                </table>   
+                                <ul class="nav nav-tabs">
+                                    <li>
+                                        <a href="#0" data-toggle="tab">Totais</a>
+                                    </li>
+                                    <li th:each="service, iter : ${origins}">
+                                        <a th:href="'#' + ${iter.index + 1}" data-toggle="tab" th:text="${service.key}"></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="0" class="tab-pane active">
+                                        <table class="table table-striped table-bordered table-hover table-responsive" id="resultados_table">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2">Ação</th>
+                                                    <th rowspan="2">Carteira</th>
+                                                    <th rowspan="2">Status</th>
+                                                    <th colspan="3">Datas</th>
+                                                    <th rowspan="2">Acessos</th>
+                                                    <th rowspan="2">Prop. Vis.</th>
+                                                    <th rowspan="2">Prop. Act.</th>
+                                                    <th rowspan="2">Contrapropostas</th>
+                                                    <th rowspan="2">Boletos</th>
+                                                    <th rowspan="2">Pagamentos</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" >Envio</th>
+                                                    <th class="text-center" >Aprovação</th>
+                                                    <th class="text-center" >Validade</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="result : ${results}">
+                                                    <td><a th:href="@{'/acoes/' + ${result.operationId}}" th:text="${result.operationId}"></a></td>
+                                                    <td th:text="${result.portfolioName}"></td>
+                                                    <td th:text="${result.operationStatus}"></td>
+                                                    <td th:text="${result.operationUploadDate} == null ? '--/--' : ${#dates.format(result.operationUploadDate, 'dd/MM')}"></td>
+                                                    <td th:text="${result.operationApprovalDate} == null ? '--/--' : ${#dates.format(result.operationApprovalDate, 'dd/MM')}"></td>
+                                                    <td th:text="${result.operationExpiryDate} == null ? '--/--' : ${#dates.format(result.operationExpiryDate, 'dd/MM')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.accessAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.visualizedProposalAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.acceptedProposalAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.counterProposalAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.generatedTicketAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.paymentAmount, 0, 'POINT')}"></td>
+                                                </tr> 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div th:each="service, iter : ${origins}" th:id="${iter.index + 1}" class="tab-pane">
+                                        <table class="table table-striped table-bordered table-hover table-responsive" id="resultados_table">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2">Ação</th>
+                                                    <th rowspan="2">Carteira</th>
+                                                    <th rowspan="2">Status</th>
+                                                    <th colspan="3">Datas</th>
+                                                    <th rowspan="2">Acessos</th>
+                                                    <th rowspan="2">Prop. Vis.</th>
+                                                    <th rowspan="2">Prop. Act.</th>
+                                                    <th rowspan="2">Contrapropostas</th>
+                                                    <th rowspan="2">Boletos</th>
+                                                    <th rowspan="2">Pagamentos</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" >Envio</th>
+                                                    <th class="text-center" >Aprovação</th>
+                                                    <th class="text-center" >Validade</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="result : ${service.value}">
+                                                    <td><a th:href="@{'/acoes/' + ${result.operationId}}" th:text="${result.operationId}"></a></td>
+                                                    <td th:text="${result.portfolioName}"></td>
+                                                    <td th:text="${result.operationStatus}"></td>
+                                                    <td th:text="${result.operationUploadDate} == null ? '--/--' : ${#dates.format(result.operationUploadDate, 'dd/MM')}"></td>
+                                                    <td th:text="${result.operationApprovalDate} == null ? '--/--' : ${#dates.format(result.operationApprovalDate, 'dd/MM')}"></td>
+                                                    <td th:text="${result.operationExpiryDate} == null ? '--/--' : ${#dates.format(result.operationExpiryDate, 'dd/MM')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.accessAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.visualizedProposalAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.acceptedProposalAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.counterProposalAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.generatedTicketAmount, 0, 'POINT')}"></td>
+                                                    <td th:text="${#numbers.formatInteger(result.paymentAmount, 0, 'POINT')}"></td>
+                                                </tr> 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,7 +185,7 @@
         var chart = AmCharts.makeChart(
             "chartdiv",
             {
-            	"columnSpacing": 0,
+                "columnSpacing": 0,
                 "type" : "funnel",
                 "theme" : "none",
                 "dataProvider" : [

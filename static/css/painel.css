@@ -116,6 +116,8 @@ table th, td{text-align: center;}
 .sidebar .active > a > .fa.arrow:before {content: "\f107";}
 
 .sidebar .nav-second-level li, .sidebar .nav-third-level li {border-bottom: none !important;}
+
+.nav-tabs a{ border-bottom: none !important; margin-bottom: 0.5px};
  
 .btn-primary.btn-outline:hover, .btn-success.btn-outline:hover, .btn-info.btn-outline:hover, .btn-warning.btn-outline:hover, .btn-danger.btn-outline:hover {color: white;}
 
@@ -269,6 +271,13 @@ table th, td{text-align: center;}
 	.confirmbutton{margin-top: 5px !important;}
 	
 	/*Comum*/
+	.nav-tabs li{
+		display: block !important;	
+		float: none !important;
+		border-radius: 5px !important;
+		text-align: center !important;
+	}
+
 	tr {border: 1px solid #ccc;}
 	
 	td:before {position: absolute;top: 6px;left: 6px;white-space: nowrap;font-weight: bold;}
@@ -315,4 +324,8 @@ table th, td{text-align: center;}
 	#resultados_table td:nth-of-type(10):before { content: "Contrapropostas:"; }
 	#resultados_table td:nth-of-type(11):before { content: "Boletos:"; }
 	#resultados_table td:nth-of-type(12):before { content: "Pagamentos:"; }
+
+	.active  a{border-bottom: 1px solid #ddd !important};
+
+
 }

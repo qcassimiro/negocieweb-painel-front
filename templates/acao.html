@@ -103,9 +103,28 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading heading-font rounded-heading text-center">Resultados</div>
+                            <div class="panel-heading heading-font rounded-heading text-center">Funil</div>
                             <div class="panel-body">
-                                <div class="col-sm-12">
+                                <div class="col-md-2 col-md-offset-1 text-center" th:with="debtors = ${operation.debtorAmount}">
+                                    <div class="row rounded-box">
+                                        <span>Número de Clientes</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(debtors, 0, 'POINT', 0, 'COMMA')}"></span>
+                                    </div>
+                                    <div class="row rounded-box" th:with="operations = ${0}">
+                                        <span>Envios de Ação</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(operations, 0, 'POINT', 0, 'COMMA')}"></span>
+                                        <span class="data-font" th:text="${'(' + #numbers.formatDecimal(operations * 100.0 / debtors, 2, 'POINT', 2, 'COMMA') + '%)'}"></span>
+                                    </div>
+                                    <div class="row rounded-box" th:with="accesses = ${operation.result.accessAmount}">
+                                        <span>Acessos</span>
+                                        <br />
+                                        <span class="data-font" th:text="${#numbers.formatDecimal(accesses, 0, 'POINT', 0, 'COMMA')}"></span>
+                                        <span class="data-font" th:text="${'(' + #numbers.formatDecimal(accesses * 100.0 / debtors, 2, 'POINT', 2, 'COMMA') + '%)'}"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 col-md-offset-1">
                                     <div id="chartdiv"></div>
                                 </div>
                             </div>
@@ -265,8 +284,8 @@
                 ],
                 "valueField" : "value",
                 "titleField" : "title",
-                "marginRight" : 125,
-                "marginLeft" : 250,
+                "marginRight" : 100,
+                "marginLeft" : 25,
                 "outlineAlpha" : 0.25,
                 "alpha": 0.75,
                 "labelsEnabled": false,

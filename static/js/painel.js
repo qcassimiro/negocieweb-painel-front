@@ -92,9 +92,12 @@ window.onscroll = function() {
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("btn-top").style.display = "block";
+        document.getElementById("btn-top").style.display = "block",
+        document.getElementById("scrolldiv").style.marginTop = "0";
+
     } else {
         document.getElementById("btn-top").style.display = "none";
+        document.getElementById("scrolldiv").style.marginTop = "3.65em";
     }
 }
 
@@ -131,6 +134,7 @@ $(document).ready(function() {
         }
     });
 });
+
 var $input = document.getElementById('input-file'),
     $fileName = document.getElementById('file-name');
 
